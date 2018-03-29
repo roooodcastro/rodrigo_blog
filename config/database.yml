@@ -8,11 +8,11 @@ default: &default
 
 development:
   <<: *default
-  database: rodrigo_blog_development
+  database: rooood_dot_com_development
 
 test:
   <<: *default
-  database: rodrigo_blog_test
+  database: rooood_dot_com_test
 
 # On Heroku and other platform providers, you may have a full connection URL
 # available as an environment variable. For example:
@@ -26,6 +26,6 @@ test:
 #
 production:
   <<: *default
-  database: rodrigo_blog_production
+  database: rooood_dot_com_production
   username: <%= ENV['RODRIGO_BLOG_DB_USERNAME'] %>
   password: <%= ENV['RODRIGO_BLOG_DB_PASSWORD'] %>

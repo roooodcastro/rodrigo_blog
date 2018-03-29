@@ -1,0 +1,41 @@
+article.blog-article {
+  h2 {
+    color: $gray-900;
+    font-size: 3rem;
+    margin: 1rem 0;
+    small {
+      color: $gray-700;
+      display: block;
+      font-size: 1.2rem;
+      font-weight: normal;
+    }
+  }
+}
+
+section.blog-article-summary {
+  background-color: $gray-100;
+  border: 1px solid $gray-200;
+  color: $gray-800;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  padding: 1rem;
+  text-align: justify;
+}
+
+section.blog-article-content {
+  color: $gray-900;
+  line-height: 1.5rem;
+  text-align: justify;
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, lg)) {
+  section.blog-article-sidebar {
+    display: none;
+  }
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, lg)) {
+  section.blog-article-sidebar {
+
+  }
+}

@@ -4,17 +4,21 @@ source 'https://rubygems.org'
 
 ruby '2.5.0'
 
+gem 'bootsnap', '>= 1.1.0', require: false
+gem 'devise'
+gem 'faker'
+gem 'font-awesome-sass', '~> 5.0.6'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'puma', '~> 3.11'
-gem 'rails', '~> 5.2.0.beta2'
-
-gem 'bootsnap', '>= 1.1.0', require: false
-gem 'bootstrap', '~> 4.0.0'
-gem 'faker'
-gem 'jquery-rails'
+gem 'pundit'
+gem 'rails', '~> 5.2.0.rc2'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-pure'
+end
 
 group :development, :test do
   gem 'factory_bot_rails'

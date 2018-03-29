@@ -1,5 +1,8 @@
-@import 'variables';
-@import 'bootstrap';
+@import 'pure';
+@import 'pure/grids-responsive';
+@import 'font-awesome-sprockets';
 
+@import 'variables';
 @import 'header';
 @import 'main';
+@import 'blog';

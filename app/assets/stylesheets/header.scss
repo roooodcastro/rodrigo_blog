@@ -1,5 +1,9 @@
-header {
-  .jumbotron {
-    border-bottom: 0.5rem solid $primary;
+header.rooood-header {
+  .pure-g {
+    background-color: $gray-200;
+    border-bottom: 0.4rem solid $primary;
+  }
+  .rooood-header-content {
+    color: $gray-800;
   }
 }
