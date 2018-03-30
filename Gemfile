@@ -8,16 +8,26 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'faker'
 gem 'font-awesome-sass', '~> 5.0.6'
+gem 'friendly_id', '~> 5.1.0'
+gem 'jquery-rails'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'puma', '~> 3.11'
 gem 'pundit'
 gem 'rails', '~> 5.2.0.rc2'
+gem 'redcarpet'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 source 'https://rails-assets.org' do
+  gem 'rails-assets-codemirror'
+  gem 'rails-assets-highlight'
+  gem 'rails-assets-markdown-it'
+  gem 'rails-assets-squire-rte'
   gem 'rails-assets-pure'
+  gem 'rails-assets-to-mark'
+  gem 'rails-assets-tui-code-snippet'
+  gem 'rails-assets-tui-color-picker'
 end
 
 group :development, :test do

@@ -1,5 +1,5 @@
 article.blog-article {
-  h2 {
+  h1 {
     color: $gray-900;
     font-size: 3rem;
     margin: 1rem 0;
@@ -26,6 +26,15 @@ section.blog-article-content {
   color: $gray-900;
   line-height: 1.5rem;
   text-align: justify;
+}
+
+.blog-article-form {
+  width: 100%;
+  .field { margin-bottom: 1rem; }
+  textarea {
+    resize: none;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: map-get($grid-breakpoints, lg)) {
