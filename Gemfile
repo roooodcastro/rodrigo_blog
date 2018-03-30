@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 ruby '2.5.0'
 
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'coderay'
 gem 'devise'
 gem 'faker'
 gem 'font-awesome-sass', '~> 5.0.6'

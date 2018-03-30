@@ -10,13 +10,14 @@
           </small>
         </h1>
       </header>
-      <section class="blog-article-summary">
-        <%= article.summary %>
-      </section>
+      <% if article.summary.present? %>
+        <section class="blog-article-summary">
+          <%= article.summary %>
+        </section>
+      <% end %>
 
       <section class="blog-article-content">
-        <% renderer = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true) %>
-        <%= renderer.render(article.content).html_safe %>
+        <%= article.render_content %>
       </section>
     </article>
   </div>

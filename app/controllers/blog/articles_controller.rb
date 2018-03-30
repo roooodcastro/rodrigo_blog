@@ -7,6 +7,7 @@ module Blog
     end
 
     def show
+      @article = @article.decorate(view_context)
     end
 
     def new

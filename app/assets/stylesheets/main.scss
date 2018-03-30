@@ -6,6 +6,8 @@ html {
   font-size: 14px;
 }
 
+strong { font-weight: 600; }
+
 @media screen and (min-width: 48em) {
   html { font-size: 16px; }
 }
@@ -17,7 +19,10 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   color: $gray-800;
-  font-family: Oswald, Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Rubik', "Helvetica Neue", Helvetica, Calibri, "Gill Sans",
+    "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", Tahoma,
+    Geneva, Arial, sans-serif;
+  font-weight: 600;
 }
 
 

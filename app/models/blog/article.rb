@@ -1,5 +1,6 @@
 module Blog
   class Article < ApplicationRecord
+    include Decoratable
     # extend FriendlyId
     # friendly_id :title, use: :slugged
 

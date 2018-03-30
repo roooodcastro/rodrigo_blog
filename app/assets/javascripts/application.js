@@ -26,6 +26,8 @@
 //= require tui-editor-color-syntax
 //= require tui-editor-table
 
+    // hljs.initHighlightingOnLoad();
+
 $(document).on('turbolinks:load', function () {
     let editor = new tui.Editor({
         el: document.querySelector('#tuiEditor'),
@@ -36,6 +38,7 @@ $(document).on('turbolinks:load', function () {
         initialValue: $('#blog_article_content').val(),
         exts: ['colorSyntax', 'table']
     });
+
 
     $('form').on('submit', function() {
        debugger;
