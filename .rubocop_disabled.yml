@@ -164,8 +164,5 @@ Rails/HasManyOrHasOneDependent:
 Style/FormatStringToken:
   Enabled: false
 
-Performance/HashEachMethods:
-  Enabled: false
-
 Metrics/BlockLength:
   Enabled: false

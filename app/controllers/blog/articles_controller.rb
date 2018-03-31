@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Blog
   class ArticlesController < ApplicationController
     before_action :load_article, only: [:show, :edit, :update, :destroy]
@@ -14,8 +16,7 @@ module Blog
       @article = current_user.articles.build
     end
 
-    def edit
-    end
+    def edit; end
 
     def create
       @article = current_user.articles.build(article_params)

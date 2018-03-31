@@ -3,32 +3,16 @@
     <div class="pure-u-lg-1-24 pure-u-xl-1-12"></div>
     <div class="pure-u-1 pure-u-lg-11-12 pure-u-xl-5-6 header-content">
       <h1>
-        <%= image_tag 'blowing_stuff_logo.svg' %>
-        <%= t(:title) %>
+        <%= link_to root_path do %>
+          <%= image_tag 'blowing_stuff_logo.svg' %>
+          <%= t(:title) %>
+        <% end %>
       </h1>
       <div class="header-user">
         <% if signed_in? %>
-        <div class="pure-menu pure-menu-horizontal">
-          <ul class="pure-menu-list">
-            <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-              <a href="#" class="pure-menu-link"><%= current_user.email %></a>
-              <ul class="pure-menu-children">
-                <li class="pure-menu-item">
-                  <%= link_to icon('far', 'user', 'My Profile'),
-                              user_path(current_user),
-                              class: 'pure-menu-link' %>
-                </li>
-                <li class="pure-menu-item">
-                  <%= link_to icon('fas', 'sign-out-alt', 'Sign out'),
-                              destroy_user_session_path,
-                              method: :delete, class: 'pure-menu-link' %>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+          <%= render partial: 'layouts/header_user_menu' %>
         <% else %>
-          <%= link_to 'Sign in', new_user_session_path %>
+          <%= render partial: 'layouts/header_guest_menu' %>
         <% end %>
       </div>
     </div>

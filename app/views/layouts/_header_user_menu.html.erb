@@ -1,0 +1,19 @@
+<div class="pure-menu pure-menu-horizontal">
+  <ul class="pure-menu-list">
+    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+      <a href="#" class="pure-menu-link"><%= current_user.email %></a>
+      <ul class="pure-menu-children">
+        <li class="pure-menu-item">
+          <%= link_to icon('far', 'user', t(:my_profile)),
+                      user_path(current_user),
+                      class: 'pure-menu-link' %>
+        </li>
+        <li class="pure-menu-item">
+          <%= link_to icon('fas', 'sign-out-alt', t(:sign_out)),
+                      destroy_user_session_path,
+                      method: :delete, class: 'pure-menu-link' %>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BaseDecorator
   attr_reader :view, :object
 
@@ -9,5 +11,4 @@ class BaseDecorator
     @view = view
     @object = object
   end
-
 end

@@ -2,12 +2,22 @@ en:
   title: Rodrigo Castro
   description: Rodrigo Castro's main website and portfolio
 
+  edit: Edit
+  delete: Delete
+  publish: Publish
+  unpublish: Unpublish
+  my_profile: My Profile
+  sign_in: Sign In
+  sign_out: Sign Out
+  sign_up: Sign Up
+
   blog:
     articles:
       article:
-        button_group: Buttons to manage the article
         confirm_delete: >
           Are you sure you want to delete this article? THIS CANNOT BE UNDONE!
         confirm_publish: Are you sure you want to publish this article?
         confirm_unpublish: Are you sure you want to unpublish this article?
-        manage_title: Manage Article
+        unpublished: UNPUBLISHED
+      manage_sidebar:
+        title: Manage Article

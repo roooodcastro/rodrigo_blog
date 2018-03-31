@@ -23,14 +23,8 @@
   </div>
   <div class="pure-u-0 pure-u-lg-1-3">
     <section class="blog-article-sidebar">
-      <% if policy(@article).update? %>
-        <div class="blog-article-manage">
-          <h3><%= t '.manage_title' %></h3>
-          <%= article.edit_button %>
-          <%= article.delete_button %>
-          <%= article.publish_button %>
-        </div>
-      <% end %>
+      <%= render partial: 'blog/articles/manage_sidebar',
+                 locals: { article: @article } %>
     </section>
   </div>
 </div>

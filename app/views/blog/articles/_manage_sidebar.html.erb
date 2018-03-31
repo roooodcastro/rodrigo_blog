@@ -1,0 +1,8 @@
+<% if policy(article).update? %>
+  <div class="blog-article-manage">
+    <h3><%= t '.title' %></h3>
+    <%= article.edit_button %>
+    <%= article.delete_button %>
+    <%= article.publish_button %>
+  </div>
+<% end %>

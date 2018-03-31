@@ -3,7 +3,6 @@ header.header-dark {
   h1 {
     color: $gray-200;
     font-size: 1.4rem;
-    line-height: 4rem;
     font-weight: 600;
     margin: 0;
     img {
@@ -15,6 +14,15 @@ header.header-dark {
       margin-bottom: 0.25rem;
       vertical-align: middle;
       width: 2.5rem;
+    }
+    a {
+      color: $gray-200;
+      display: inline-block;
+      line-height: 4.15rem;
+      &:hover {
+        color: white;
+        text-decoration: none;
+      }
     }
   }
   .header-content {

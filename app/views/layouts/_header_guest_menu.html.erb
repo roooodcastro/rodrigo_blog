@@ -1,0 +1,13 @@
+<div class="pure-menu pure-menu-horizontal">
+  <ul class="pure-menu-list">
+    <li class="pure-menu-item">
+      <%= link_to icon('fas', 'sign-in-alt', t(:sign_in)), new_user_session_path,
+                  class: 'pure-menu-link' %>
+    </li>
+    <li class="pure-menu-item">
+      <%= link_to icon('fas', 'user-plus', t(:sign_up)), new_user_registration_path,
+                  class: 'pure-menu-link' %>
+
+    </li>
+  </ul>
+</div>
