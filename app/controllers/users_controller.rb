@@ -12,18 +12,21 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      
+      flash[:notice] = t('users.update.success')
+      redirect_to @user
     else
-
+      flash[:error] = t('users.update.error', errors)
+      render :edit
     end
   end
 
   def destroy
     if @user.destroy
-
+      flash[:notice] = t('users.destroy.success')
     else
-
+      flash[:error] = t('users.destroy.error', errors)
     end
+    redirect_to @user
   end
 
   private
@@ -38,5 +41,9 @@ class UsersController < ApplicationController
 
   def authorize_action
     authorize(@user, "#{params[:action]}?")
+  end
+
+  def errors
+    @user.errors.full_messages.join(',')
   end
 end

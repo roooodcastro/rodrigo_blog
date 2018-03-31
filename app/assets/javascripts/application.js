@@ -2,6 +2,8 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require js-routes
+//= require jquery-flexdatalist
 
 //= require markdown-it
 //= require to-mark

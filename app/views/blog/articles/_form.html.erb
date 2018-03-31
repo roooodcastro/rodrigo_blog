@@ -5,9 +5,9 @@
       <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
 
       <ul>
-      <% article.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -26,6 +26,11 @@
     <%= form.label :content %>
     <%= form.hidden_field :content %>
     <div id="tuiEditor"></div>
+  </div>
+
+  <div class="field">
+    <%= form.label :tags_text %>
+    <%= form.text_field :tags_text, id: 'blog_article_tags' %>
   </div>
 
   <div class="actions">

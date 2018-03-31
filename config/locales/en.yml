@@ -25,6 +25,7 @@ en:
         unpublished: UNPUBLISHED
       form:
         save: Save Article
+        tags_placeholder: Tags separated by a comma (,)
       index:
         comments:
           one: "%{count} comment"
@@ -43,3 +44,10 @@ en:
     tags:
       tags:
         no-tag: No Tags
+  users:
+    destroy:
+      success: User removed!
+      error: "Couldn't remove user: %{errors}"
+    update:
+      success: User updated successfully!
+      error: "User couldn't be updated: %{errors}"

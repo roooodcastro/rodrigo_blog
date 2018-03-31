@@ -43,6 +43,9 @@ section.blog-article-content {
     resize: none;
     width: 100%;
   }
+  .flexdatalist-multiple li.input-container input { box-shadow: none; }
+  .flexdatalist-multiple li.value { line-height: 29px; }
+  .flexdatalist-multiple li.value span.fdl-remove { line-height: 29px; }
 }
 
 section.blog-article-sidebar {

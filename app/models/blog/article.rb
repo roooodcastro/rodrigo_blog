@@ -19,6 +19,10 @@ module Blog
     scope :order_by_recents, -> { order created_at: :desc }
     scope :order_by_published, -> { order published_at: :desc }
 
+    def tags_text
+      tags.map(&:name).join(', ')
+    end
+
     def published?
       published_at?
     end

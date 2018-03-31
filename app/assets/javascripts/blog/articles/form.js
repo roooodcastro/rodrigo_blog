@@ -10,9 +10,15 @@ $(document).on('turbolinks:load', function () {
             exts: ['colorSyntax', 'table']
         });
 
-
         $('form').on('submit', function () {
             $('#blog_article_content').val(editor.getMarkdown());
+        });
+
+        $('#blog_article_tags').flexdatalist({
+            data: Routes.blog_tags_path({ format: 'json' }),
+            multiple: true,
+            searchIn: 'name',
+            visibleProperties: ['name', 'article_count']
         });
     }
 });
