@@ -10,5 +10,9 @@ module Blog
 
     scope :published, -> { where 'published_at is not null' }
     scope :unpublished, -> { where 'published_at is null' }
+
+    def published?
+      published_at?
+    end
   end
 end

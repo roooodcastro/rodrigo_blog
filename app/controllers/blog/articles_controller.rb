@@ -47,7 +47,8 @@ module Blog
     end
 
     def article_params
-      params.require(:blog_article).permit(:title, :summary, :content, :author)
+      params.require(:blog_article).permit(:title, :summary, :content, :author,
+                                           :published_at)
     end
   end
 end

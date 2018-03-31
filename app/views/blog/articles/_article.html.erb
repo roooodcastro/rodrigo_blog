@@ -5,8 +5,8 @@
         <h1>
           <%= article.title %>
           <small>
-            by <strong><%= article.author.email %></strong>
-            at <strong><%= l article.created_at, format: :long %></strong>
+            by <%= article.link_to_author %>,
+            <%= article.published_date %>
           </small>
         </h1>
       </header>
@@ -23,6 +23,10 @@
   </div>
   <div class="pure-u-0 pure-u-lg-1-4">
     <section class="blog-article-sidebar">
+      <% if policy(@article).update? %>
+        <%= link_to 'Edit', edit_blog_article_path(@article) %>
+        <%= article.publish_button %>
+      <% end %>
     </section>
   </div>
 </div>

@@ -8,7 +8,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'coderay'
 gem 'devise'
 gem 'faker'
-gem 'font-awesome-sass', '~> 5.0.6'
+gem 'font-awesome-sass', '~> 5.0.9'
 gem 'friendly_id', '~> 5.1.0'
 gem 'jquery-rails'
 gem 'mysql2', '>= 0.3.18', '< 0.5'

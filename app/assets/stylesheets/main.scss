@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -7,6 +11,13 @@ html {
 }
 
 strong { font-weight: 600; }
+
+a {
+  color: $primary;
+  font-weight: 600;
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
 
 @media screen and (min-width: 48em) {
   html { font-size: 16px; }

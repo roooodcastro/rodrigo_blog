@@ -3,13 +3,14 @@ article.blog-article {
   h1 {
     color: $gray-900;
     font-size: 3rem;
-    margin: 1rem 0;
+    margin: 1rem 0 3rem 0;
+    text-align: center;
     small {
       color: $gray-700;
       display: block;
       font-size: 1rem;
       font-weight: 400;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
     }
   }
   h2 {
