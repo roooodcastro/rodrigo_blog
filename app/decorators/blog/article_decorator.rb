@@ -6,14 +6,38 @@ module Blog
 
     def published_date
       return 'UNPUBLISHED' unless published_at
-      view.l published_at, format: :long
+      l published_at, format: :long
+    end
+
+    def edit_button
+      link_to icon('far', 'edit', 'Edit'),
+              view.edit_blog_article_path(object),
+              class: 'pure-button pure-button-block button-primary'
+    end
+
+    def delete_button
+      link_to icon('far', 'trash-alt', 'Delete'),
+              view.blog_article_path(object), method: :delete,
+              class: 'pure-button pure-button-block button-danger mt-3',
+              data: { confirm: t('blog.articles.article.confirm_delete') }
     end
 
     def publish_button
-      return if published?
+      return unpublish_button if published?
       form_with model: object, local: true do |f|
-        f.button 'Publish', name: 'blog_article[published_at]',
-                 value: Time.zone.now
+        f.button icon('far', 'paper-plane', 'Publish'),
+                 name: 'blog_article[published_at]', value: Time.zone.now,
+                 class: 'pure-button pure-button-block button-success mt-3',
+                 data: { confirm: t('blog.articles.article.confirm_publish') }
+      end
+    end
+
+    def unpublish_button
+      form_with model: object, local: true do |f|
+        f.button icon('fas', 'lock', 'Unpublish'),
+                 name: 'blog_article[published_at]', value: nil,
+                 class: 'pure-button pure-button-block button-danger mt-3',
+                 data: { confirm: t('blog.articles.article.confirm_unpublish') }
       end
     end
 

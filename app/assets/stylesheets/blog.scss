@@ -45,6 +45,21 @@ section.blog-article-content {
   }
 }
 
+section.blog-article-sidebar {
+  margin: 1rem 0 0 1rem;
+}
+
+.blog-article-manage {
+  background-color: $gray-200;
+  padding: 1rem;
+  h3 {
+    border-bottom: 1px solid $gray-300;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: map-get($grid-breakpoints, lg)) {
   section.blog-article-sidebar {
     display: none;
