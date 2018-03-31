@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  resources :users, only: [:show]
+  resources :users, except: [:new, :create]
 
   namespace :blog do
     resource :blog, only: [:show], path: '/', as: :feed
