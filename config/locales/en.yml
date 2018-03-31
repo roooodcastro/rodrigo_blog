@@ -34,7 +34,12 @@ en:
         unpublished: UNPUBLISHED!
       manage_sidebar:
         title: Manage Article
+      tags:
+        title: Tags
     blog:
       show:
         no_summary: No summary available
         title: Blog Articles
+    tags:
+      tags:
+        no-tag: No Tags

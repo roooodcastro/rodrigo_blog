@@ -7,6 +7,8 @@ module Blog
     friendly_id :title, use: :slugged
 
     belongs_to :author, class_name: 'User'
+    has_many :article_tags
+    has_many :tags, through: :article_tags
 
     validates :author, :title, :content, presence: true
 

@@ -11,7 +11,11 @@
             <%= simple_format article.summary.presence || t('.no_summary') %>
           </div>
           <div class="blog-articles-item-info">
-              <%= article.published_date %>
+            <%= article.published_date %>
+            <div>
+              <%= render partial: 'blog/tags/tags',
+                         locals: { tags: article.tags } %>
+            </div>
           </div>
         </div>
       <% end %>
