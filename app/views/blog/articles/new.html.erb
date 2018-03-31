@@ -1,5 +1,4 @@
 <h1>New Article</h1>
 
-<%= render partial: 'form', locals: { article: @article } %>
-
-<%= link_to 'Back', blog_articles_path %>
+<%= render partial: 'form',
+           locals: { article: @article, back_path: blog_articles_path } %>

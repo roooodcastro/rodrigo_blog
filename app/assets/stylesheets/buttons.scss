@@ -1,52 +1,37 @@
 .pure-button {
+  border: 1px solid transparent;
   border-radius: 0;
   color: $gray-100;
   line-height: 1.5rem;
   padding: 0.4rem 1rem;
   &:hover {
-    background-image: linear-gradient(transparent,
-                                      rgba(0, 0, 0, 0.05) 60%,
-                                      rgba(0, 0, 0, 0.15));
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.15));
     color: white;
   }
 }
 
-.button-primary,
-.button-success,
-.button-danger,
-.button-warning,
-.button-secondary {
+.button-primary, .button-success, .button-danger,
+.button-warning, .button-secondary {
   font-weight: 400;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   &:hover { text-decoration: none; }
 }
 
-.button-primary {
-  background-color: $primary;
-}
-
-.button-success {
-  background-color: $success;
-}
-
-.button-danger {
-  background-color: $danger;
-}
-
-.button-warning {
-  background-color: $warning;
-}
+.button-primary { background-color: $primary; border-color: $primary; }
+.button-success { background-color: $success; border-color: $success; }
+.button-danger  { background-color: $danger;  border-color: $danger; }
+.button-warning { background-color: $warning; border-color: $warning; }
 
 .button-secondary {
-  background-color: $secondary;
+  background-color: white;
+  border-color: $secondary;
+  color: darken($secondary, 15%);
+  &:hover {
+    background-image: linear-gradient(transparent, rgba($secondary, 0.2));
+    color: darken($secondary, 10%);
+  }
 }
 
-.pure-button-group {
-  display: flex;
-}
-
-.pure-button-group-justify > * {
-  width: 100%;
-}
-
+.pure-button-group { display: flex; }
+.pure-button-group-justify > * { width: 100%; }
 .pure-button-block { width: 100%; }

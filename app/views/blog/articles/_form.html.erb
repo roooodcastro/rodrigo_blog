@@ -14,7 +14,7 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_area :title, rows: 2 %>
+    <%= form.text_field :title %>
   </div>
 
   <div class="field">
@@ -29,6 +29,9 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= link_to icon('fas', 'chevron-left', t(:back)), back_path,
+                class: 'pure-button button-secondary' %>
+    <%= form.button icon('far', 'save', t('.save')),
+                    class: 'pure-button button-primary' %>
   </div>
 <% end %>

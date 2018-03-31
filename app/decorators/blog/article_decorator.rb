@@ -3,42 +3,46 @@
 module Blog
   class ArticleDecorator < BaseDecorator
     def link_to_author
-      link_to author.email, view.user_path(author.id)
+      link_to author_name, view.user_path(author.id)
     end
 
     def published_date
       return t('blog.articles.article.unpublished') unless published_at
-      l published_at, format: :long
+      l published_at.to_date, format: :long
     end
 
-    def edit_button
+    def edit_button(block = false)
+      class_block = block ? 'pure-button-block' : ''
       link_to icon('far', 'edit', t(:edit)),
               view.edit_blog_article_path(object),
-              class: 'pure-button pure-button-block button-primary'
+              class: "pure-button #{class_block} button-primary"
     end
 
-    def delete_button
+    def delete_button(block = false)
+      class_block = block ? 'pure-button-block mt-3' : ''
       link_to icon('far', 'trash-alt', t(:delete)),
               view.blog_article_path(object), method: :delete,
-              class: 'pure-button pure-button-block button-danger mt-3',
+              class: "pure-button #{class_block} button-danger",
               data: { confirm: t('blog.articles.article.confirm_delete') }
     end
 
-    def publish_button
-      return unpublish_button if published?
-      form_with model: object, local: true do |f|
+    def publish_button(block = false)
+      class_block = block ? 'pure-button-block mt-3' : ''
+      return unpublish_button(block) if published?
+      update_form(block) do |f|
         f.button icon('far', 'paper-plane', t(:publish)),
                  name: 'blog_article[published_at]', value: Time.zone.now,
-                 class: 'pure-button pure-button-block button-success mt-3',
+                 class: "pure-button #{class_block} button-success",
                  data: { confirm: t('blog.articles.article.confirm_publish') }
       end
     end
 
-    def unpublish_button
-      form_with model: object, local: true do |f|
+    def unpublish_button(block = false)
+      class_block = block ? 'pure-button-block mt-3' : ''
+      update_form(block) do |f|
         f.button icon('fas', 'lock', t(:unpublish)),
                  name: 'blog_article[published_at]', value: nil,
-                 class: 'pure-button pure-button-block button-danger mt-3',
+                 class: "pure-button #{class_block} button-danger",
                  data: { confirm: t('blog.articles.article.confirm_unpublish') }
       end
     end
@@ -49,6 +53,13 @@ module Blog
                strikethrough: true, no_intra_emphasis: true, superscript: true }
       markdown_to_html = Redcarpet::Markdown.new(coderayified, opts)
       markdown_to_html.render(content).html_safe
+    end
+
+    def update_form(block = true)
+      form_with model: object, local: true,
+                html: { class: block ? '' : 'form-inline' } do |f|
+        yield(f)
+      end
     end
   end
 end

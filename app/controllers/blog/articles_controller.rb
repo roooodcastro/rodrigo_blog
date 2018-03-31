@@ -3,9 +3,11 @@
 module Blog
   class ArticlesController < ApplicationController
     before_action :load_article, only: [:show, :edit, :update, :destroy]
+    before_action :authorize_action, except: [:index, :show]
 
     def index
-      @articles = Article.all
+      redirect_to blog_feed_path unless current_user&.poster?
+      @articles = Article.order_by_recents.map { |a| a.decorate(view_context) }
     end
 
     def show
@@ -44,12 +46,16 @@ module Blog
     private
 
     def load_article
-      @article = Article.find(params[:id])
+      @article = Article.friendly.find(params[:id])
     end
 
     def article_params
       params.require(:blog_article).permit(:title, :summary, :content, :author,
                                            :published_at)
+    end
+
+    def authorize_action
+      authorize(@article, "#{params[:action]}?")
     end
   end
 end

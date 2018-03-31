@@ -39,7 +39,7 @@ section.blog-article-content {
 .blog-article-form {
   width: 100%;
   .field { margin-bottom: 1rem; }
-  textarea {
+  textarea, input {
     resize: none;
     width: 100%;
   }
@@ -59,6 +59,53 @@ section.blog-article-sidebar {
     text-align: center;
   }
 }
+
+form.blog-article-form {
+
+}
+
+.blog-articles {
+  margin-top: 2rem;
+  .blog-articles-item {
+    border: 1px solid transparent;
+    border-bottom-color: $gray-300;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    h2 { margin: 0 0 1.5rem 0; }
+    .blog-articles-item-info { margin: 0 0 1.5rem 0; }
+    .blog-articles-item-summary {
+      margin-bottom: 1.5rem;
+      p { margin: 0; text-align: justify; }
+    }
+    &:last-child { border-bottom-color: transparent; }
+    &.unpublished {
+      border-color: $warning;
+      padding-top: 3rem;
+      position: relative;
+      &:before {
+        background: repeating-linear-gradient(
+                        45deg,
+                        lighten($secondary, 40%),
+                        lighten($secondary, 40%) 1rem,
+                        white 1rem,
+                        white 2rem
+        );
+        border-bottom: 1px solid lighten($secondary, 40%);
+        color: darken($warning, 10%);
+        content: attr(data-content);
+        font-weight: 600;
+        height: 2rem;
+        left: 0;
+        line-height: 2rem;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+
 
 @media screen and (max-width: map-get($grid-breakpoints, lg)) {
   section.blog-article-sidebar {

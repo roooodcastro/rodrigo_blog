@@ -1,1 +1,22 @@
-<%= render partial: 'blog/articles/article' %>
+<%= content_for(:title, t('.title')) %>
+
+<div class="pure-g">
+  <div class="pure-u-1 pure-u-lg-2-3">
+    <h1 class="page-title"><%= t '.title' %></h1>
+    <div class="blog-articles">
+      <% @articles.each do |article| %>
+        <div class="blog-articles-item">
+          <h2><%= link_to article.title, blog_article_path(article.id) %></h2>
+          <div class="blog-articles-item-summary">
+            <%= simple_format article.summary.presence || t('.no_summary') %>
+          </div>
+          <div class="blog-articles-item-info">
+              <%= article.published_date %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="pure-u-0 pure-u-lg-1-3">
+  </div>
+</div>

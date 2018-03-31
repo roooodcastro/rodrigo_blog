@@ -11,15 +11,15 @@ module Blog
     end
 
     def create?
-      user == record.author
+      user&.poster?
     end
 
     def update?
-      user == record.author
+      user == record.author || user&.admin?
     end
 
     def destroy?
-      user == record.author
+      user == record.author || user&.admin?
     end
   end
 end
