@@ -1,0 +1,18 @@
+<%= content_for(:content) do %>
+  <div class="pure-g">
+    <div class="pure-u-1 pure-u-lg-2-3">
+      <%= yield %>
+    </div>
+    <div class="pure-u-0 pure-u-lg-1-3">
+      <section class="blog-article-sidebar">
+        <%= content_for(:sidebar) %>
+        <%= render partial: 'blog/articles/recent_articles' %>
+        <%= render partial: 'blog/tags/tag_list',
+                   locals: { tags: @blog.all_tags } %>
+      </section>
+    </div>
+  </div>
+
+<% end %>
+
+<%= render template: 'layouts/application' %>

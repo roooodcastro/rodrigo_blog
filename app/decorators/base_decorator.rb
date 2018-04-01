@@ -7,7 +7,7 @@ class BaseDecorator
            :l, :form_with, to: :view
   delegate_missing_to :object
 
-  def initialize(view, object)
+  def initialize(view, object = nil)
     @view = view
     @object = object
   end

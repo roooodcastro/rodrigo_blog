@@ -1,36 +1,23 @@
-<div class="pure-g">
-  <div class="pure-u-1 pure-u-lg-2-3">
-    <article class="blog-article">
-      <header>
-        <h1>
-          <%= article.title %>
-          <small>
-            <%= t '.by' %> <%= article.link_to_author %>,
-            <%= article.published_date %>
-          </small>
-        </h1>
-      </header>
-      <% if article.summary.present? %>
-        <section class="blog-article-summary">
-          <%= article.summary %>
-        </section>
-      <% end %>
-
-      <section class="blog-article-content">
-        <%= article.render_content %>
-      </section>
-    </article>
-  </div>
-  <div class="pure-u-0 pure-u-lg-1-3">
-    <section class="blog-article-sidebar">
-      <%= render partial: 'blog/articles/manage_sidebar',
-                 locals: { article: @article } %>
-      <%= render partial: 'blog/articles/tags',
-                 locals: { article: @article } %>
-      <%= render partial: 'blog/articles/share',
-                 locals: { article: @article } %>
-      <%= render partial: 'blog/articles/related_articles',
-                 locals: { article: @article } %>
+<article class="blog-article">
+  <header>
+    <h1>
+      <%= article.title %>
+      <small>
+        <%= t '.by' %> <%= article.link_to_author %>,
+        <%= article.published_date %>
+      </small>
+    </h1>
+    <div class="blog-article-tags">
+      <%= render partial: 'blog/tags/tags', locals: { tags: article.tags } %>
+    </div>
+  </header>
+  <% if article.summary.present? %>
+    <section class="blog-article-summary">
+      <%= article.summary %>
     </section>
-  </div>
-</div>
+  <% end %>
+
+  <section class="blog-article-content">
+    <%= article.render_content %>
+  </section>
+</article>

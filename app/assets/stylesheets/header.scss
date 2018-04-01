@@ -59,13 +59,13 @@ ul.pure-menu-list {
     color: $gray-200;
     font-weight: 400;
     padding: 0 1rem;
-    transition: background-color 0.2s;
+    transition: background-color 0.3s;
     i { margin-right: 1rem; }
     &:hover {
       background-color: $primary;
       color: white;
       text-decoration: none;
-      transition: background-color 0.2s;
+      transition: background-color 0.3s;
     }
   }
   li.header-user-menu { min-width: 12rem; }

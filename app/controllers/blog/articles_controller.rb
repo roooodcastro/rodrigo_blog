@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Blog
-  class ArticlesController < ApplicationController
+  class ArticlesController < ::BlogController
     before_action :load_article, only: [:show, :edit, :update, :destroy]
     before_action :authorize_action, except: [:index, :show]
 

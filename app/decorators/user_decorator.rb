@@ -1,4 +1,16 @@
 class UserDecorator < BaseDecorator
+  def articles
+    @articles ||= object.articles.order_by_recents.map { |a| a.decorate(view) }
+  end
+
+  def formatted_admin?
+    t(object.admin? ? :y : :n)
+  end
+
+  def formatted_poster?
+    t(object.poster? ? :y : :n)
+  end
+
   def edit_button(block = false)
     class_block = block ? 'pure-button-block mt-3' : ''
     link_to icon('far', 'edit', t(:edit)),

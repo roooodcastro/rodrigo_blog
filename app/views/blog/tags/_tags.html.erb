@@ -1,7 +1,10 @@
 <% if tags.present? %>
   <% tags.each do |tag| %>
-    <span class="blog-tag"><%= link_to tag.name, blog_tag_path(tag.slug) %></span>
+    <span class="blog-tag">
+      <span></span>
+      <%= link_to tag.name, blog_tag_path(tag.slug) %>
+    </span>
   <% end %>
 <% else %>
-  <span class="blog-tag"><em><%= t '.no-tag' %></em></span>
+  <span class="blog-tag"><em><%= t '.no_tag' %></em></span>
 <% end %>

@@ -11,6 +11,7 @@ html {
 }
 
 strong { font-weight: 600; }
+hr { border: none; border-bottom: 1px solid $gray-300; }
 
 a {
   color: $primary;
@@ -47,3 +48,10 @@ h1.page-title {
 form.form-inline { display: inline-block; }
 
 .text-center { text-align: center; }
+
+dl.horizontal-dl {
+  dt, dd { display: inline; margin: 0; }
+  dt { font-weight: 600; }
+  dt:after { content: ':'; display: inline-block; margin-bottom: 1rem; }
+  dd:after { content: '\A'; white-space: pre; }
+}

@@ -1,0 +1,21 @@
+<%= title t('.title', user: @user.name) %>
+
+<h2><%= t('.basic_info') %></h2>
+
+<dl class="horizontal-dl">
+  <dt><%= User.human_attribute_name :name %></dt>
+  <dd><%= @user.name %></dd>
+  <dt><%= User.human_attribute_name :email %></dt>
+  <dd><%= @user.email %></dd>
+  <dt><%= User.human_attribute_name :admin %></dt>
+  <dd><%= @user.formatted_admin? %></dd>
+  <dt><%= User.human_attribute_name :poster %></dt>
+  <dd><%= @user.formatted_poster? %></dd>
+</dl>
+
+<hr />
+
+<h2><%= t('.posts') %> <%= t('.post_count', count: @user.articles.size) %></h2>
+
+<%= render partial: 'blog/articles/articles',
+           locals: { articles: @user.articles } %>

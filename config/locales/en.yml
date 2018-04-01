@@ -7,6 +7,7 @@ en:
   delete: Delete
   edit: Edit
   edit_account: Account Settings
+  n: 'No'
   not_authorized: >
     Sorry, but you do not have the required permission to perform this action!
   publish: Publish
@@ -14,6 +15,7 @@ en:
   sign_out: Sign Out
   sign_up: Sign Up
   unpublish: Unpublish
+  y: 'Yes'
 
   blog:
     articles:
@@ -24,18 +26,21 @@ en:
         confirm_publish: Are you sure you want to publish this article?
         confirm_unpublish: Are you sure you want to unpublish this article?
         unpublished: UNPUBLISHED
+      articles:
+        comments:
+          one: "%{count} comment"
+          other: "%{count} comments"
+        unpublished: UNPUBLISHED!
       form:
         save: Save Article
         tags_placeholder: Tags separated by a comma (,)
       index:
-        comments:
-          one: "%{count} comment"
-          other: "%{count} comments"
         new: Create new article
         title: All Blog Articles
-        unpublished: UNPUBLISHED!
       manage_sidebar:
         title: Manage Article
+      recent_articles:
+        title: Recent Articles
       related_articles:
         title: Related Posts
       share:
@@ -43,12 +48,21 @@ en:
       tags:
         title: Tags
     blog:
-      show:
+      articles:
         no_summary: No summary available
+        no_articles: No articles found!
+      show:
         title: Blog Articles
     tags:
+      show:
+        article_count:
+          one: "%{count} article with this tag:"
+          other: "%{count} articles with this tag:"
+        title_html: "Tag \"%{tag}\""
+      tag_list:
+        title: All Tags
       tags:
-        no-tag: No Tags
+        no_tag: No Tags
   users:
     confirm_delete: Are you sure you want to delete this user?
 
@@ -57,10 +71,17 @@ en:
       error: "Couldn't remove user: %{errors}"
     edit:
       title: "Editing user %{user}"
-    index:
-      title: Users
     form:
       save: Save User
+    index:
+      title: Users
+    show:
+      basic_info: Basic Info
+      post_count:
+        one: "(%{count} post)"
+        other: "(%{count} posts)"
+      posts: Post History
+      title: "User %{user}"
     update:
       success: User updated successfully!
       error: "User couldn't be updated: %{errors}"

@@ -3,7 +3,7 @@ article.blog-article {
   h1 {
     color: $gray-900;
     font-size: 3rem;
-    margin: 1rem 0 3rem 0;
+    margin: 1rem 0 2rem 0;
     text-align: center;
     small {
       color: $gray-700;
@@ -17,6 +17,10 @@ article.blog-article {
     border-bottom: 1px solid $gray-300;
     margin-top: 3rem;
     padding-bottom: 0.5rem;
+  }
+  .blog-article-tags {
+    margin-bottom: 3rem;
+    text-align: center;
   }
 }
 
@@ -44,7 +48,7 @@ section.blog-article-content {
 }
 
 section.blog-article-sidebar {
-  margin: 1rem 0 0 1rem;
+  margin: 1rem 0 0 2rem;
   h3 {
     border-bottom: 1px solid $gray-300;
     margin: 2rem 0 1rem 0;
@@ -57,24 +61,35 @@ section.blog-article-sidebar {
   }
 }
 
-
-form.blog-article-form {
-
+ul.blog-sidebar-taglist {
+  padding-left: 2rem;
+  list-style: square;
+  li a {
+    display: block;
+    padding: 0.3rem 1rem;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: $gray-200;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+  }
 }
 
 .blog-tag {
-  background-color: $gray-300;
+  background-color: $gray-200;
   display: inline-block;
   margin: 0 0 0.25rem 0.8rem;
   position: relative;
-  a, em { display: block; padding: 0.2rem 1rem; }
+  text-align: left;
+  a, em { display: block; padding: 0.15rem 1rem 0.25rem 1rem; }
   &:before {
-    border-right: 0.8rem solid $gray-300;
-    border-top: 0.8rem solid transparent;
-    border-bottom: 0.8rem solid transparent;
+    border-right: 0.9rem solid $gray-200;
+    border-top: 0.9rem solid transparent;
+    border-bottom: 0.9rem solid transparent;
     content: '';
     height: 0;
-    left: -0.8rem;
+    left: -0.9rem;
     position: absolute;
     width: 0;
   }
@@ -84,7 +99,14 @@ form.blog-article-form {
     content: '';
     height: 0.4rem;
     position: absolute;
-    top: 0.6rem;
+    top: 0.7rem;
+    width: 0.4rem;
+  }
+  span {
+    background-color: white;
+    height: 1.8rem;
+    left: -1rem;
+    position: absolute;
     width: 0.4rem;
   }
 }
