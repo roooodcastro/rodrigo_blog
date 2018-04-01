@@ -8,6 +8,9 @@
           <%= t(:title) %>
         <% end %>
       </h1>
+
+      <%= render partial: 'layouts/horizontal_menu' %>
+
       <div class="header-user">
         <% if signed_in? %>
           <%= render partial: 'layouts/header_user_menu' %>

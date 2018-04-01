@@ -31,6 +31,12 @@ header.header-dark {
     .header-user {
 
     }
+    .header-menu {
+      flex-grow: 1;
+      margin-left: 1rem;
+      padding: 0 1rem;
+      text-align: left;
+    }
   }
 }
 
@@ -52,7 +58,8 @@ header.header-light {
   }
 }
 
-ul.pure-menu-list {
+.pure-menu-horizontal ul.pure-menu-list {
+  display: flex;
   > li.pure-menu-item { line-height: 4rem; }
   .pure-menu-link {
     background-color: darken($primary, 25%);
