@@ -25,8 +25,12 @@
     <section class="blog-article-sidebar">
       <%= render partial: 'blog/articles/manage_sidebar',
                  locals: { article: @article } %>
-
-      <%= render partial: 'blog/articles/tags', locals: { article: @article } %>
+      <%= render partial: 'blog/articles/tags',
+                 locals: { article: @article } %>
+      <%= render partial: 'blog/articles/share',
+                 locals: { article: @article } %>
+      <%= render partial: 'blog/articles/related_articles',
+                 locals: { article: @article } %>
     </section>
   </div>
 </div>

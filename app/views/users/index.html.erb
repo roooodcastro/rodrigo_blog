@@ -1,0 +1,33 @@
+<%= title t('.title') %>
+
+<table class="pure-table">
+  <thead>
+  <tr>
+    <th style="width: 30%"><%= User.human_attribute_name(:name) %></th>
+    <th style="width: 30%"><%= User.human_attribute_name(:email) %></th>
+    <th style="width: 10%" class="text-center">
+      <%= User.human_attribute_name(:admin) %>
+    </th>
+    <th style="width: 10%" class="text-center">
+      <%= User.human_attribute_name(:poster) %>
+    </th>
+    <th style="width: 20%" class="text-center"><%= t(:actions) %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td class="text-center"><%= user.admin? %></td>
+      <td class="text-center"><%= user.poster? %></td>
+      <td>
+        <div class="pure-button-group pure-button-group-justify">
+          <%= user.edit_button %>
+          <%= user.delete_button %>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

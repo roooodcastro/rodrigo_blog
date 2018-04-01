@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
-  before_action :authorize_action, except: [:index, :show]
+  before_action :authorize_action
 
   def index
-    @users = User.all
+    @users = User.all.map { |a| a.decorate(view_context) }
   end
 
-  def show; end
+  def show
+    @user = @user.decorate(view_context)
+  end
 
   def edit; end
 
@@ -40,7 +42,7 @@ class UsersController < ApplicationController
   end
 
   def authorize_action
-    authorize(@user, "#{params[:action]}?")
+    authorize(@user || User, "#{params[:action]}?")
   end
 
   def errors

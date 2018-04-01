@@ -1,1 +1,14 @@
 form.form-inline { display: inline-block; }
+
+form .field {
+  margin-bottom: 1rem;
+  input[type="text"], input[type="email"], input[type="number"] {
+    width: 100%;
+  }
+  textarea { resize: none; width: 100%; }
+}
+
+form .actions {
+  background-color: $gray-200;
+  padding: 2rem 1rem;
+}

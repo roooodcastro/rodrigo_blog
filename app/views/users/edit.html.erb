@@ -1,0 +1,3 @@
+<%= title t('.title', user: @user.name) %>
+
+<%= render partial: 'form', locals: { user: @user, back_path: users_path } %>
