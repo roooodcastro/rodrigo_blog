@@ -51,7 +51,7 @@ module Blog
 
     def article_params
       params.require(:blog_article).permit(:title, :summary, :content, :author,
-                                           :published_at)
+                                           :published_at, :tags_text)
     end
 
     def authorize_action

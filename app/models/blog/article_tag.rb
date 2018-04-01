@@ -4,5 +4,6 @@ module Blog
     belongs_to :tag
 
     validates :article, :tag, presence: true
+    validates :tag, uniqueness: { scope: :article }
   end
 end

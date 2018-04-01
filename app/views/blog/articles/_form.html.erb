@@ -30,7 +30,8 @@
 
   <div class="field">
     <%= form.label :tags_text %>
-    <%= form.text_field :tags_text, id: 'blog_article_tags' %>
+    <%= form.text_field :tags_text, id: 'blog_article_tags',
+                        value: form.object.formatted_tags %>
   </div>
 
   <div class="actions">

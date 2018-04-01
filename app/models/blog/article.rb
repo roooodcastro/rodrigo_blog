@@ -6,9 +6,13 @@ module Blog
     extend FriendlyId
     friendly_id :title, use: :slugged
 
+    attr_accessor :tags_text
+
     belongs_to :author, class_name: 'User'
     has_many :article_tags
     has_many :tags, through: :article_tags
+
+    after_save :create_tags
 
     validates :author, :title, :content, presence: true
 
@@ -19,12 +23,22 @@ module Blog
     scope :order_by_recents, -> { order created_at: :desc }
     scope :order_by_published, -> { order published_at: :desc }
 
-    def tags_text
+    def formatted_tags
       tags.map(&:name).join(', ')
     end
 
     def published?
       published_at?
+    end
+
+    private
+
+    def create_tags
+      new_article_tags = tags_text.split(',').map(&:strip).uniq.map do |text|
+        tag = Blog::Tag.find_or_create_by(name: text)
+        Blog::ArticleTag.find_or_create_by(article: self, tag: tag)
+      end
+      (article_tags - new_article_tags).map(&:destroy)
     end
   end
 end
