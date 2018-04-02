@@ -7,6 +7,7 @@ ruby '2.5.0'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'coderay'
 gem 'devise'
+gem 'devise-i18n'
 gem 'faker'
 gem 'fast_jsonapi'
 gem 'font-awesome-sass', '~> 5.0.9'

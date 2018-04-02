@@ -1,0 +1,9 @@
+.devise-login-form {
+  border: 1px solid $gray-200;
+  padding-top: 2rem;
+  text-align: center;
+  .field {
+    padding: 0 2rem;
+    text-align: left;
+  }
+}

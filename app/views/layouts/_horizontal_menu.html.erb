@@ -1,7 +1,7 @@
 <div class="header-menu">
   <div class="pure-menu pure-menu-horizontal">
     <ul class="pure-menu-list">
-      <% if current_user.admin? %>
+      <% if current_user&.admin? %>
         <li class="pure-menu-item">
           <%= link_to t('.feed'),
                       blog_feed_path, class: 'pure-menu-link' %>
