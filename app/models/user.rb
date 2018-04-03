@@ -4,7 +4,7 @@ class User < ApplicationRecord
   include Decoratable
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
-         :trackable
+         :trackable, :validatable
 
   validates :name, presence: true
 

@@ -7,9 +7,10 @@ form .field {
     width: 100%;
   }
   textarea { resize: none; width: 100%; }
+  small { color: $gray-600; }
 }
 
 form .actions {
   background-color: $gray-200;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
 }

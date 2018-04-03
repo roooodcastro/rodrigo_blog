@@ -1,4 +1,11 @@
-.devise-login-form {
+.devise-card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  > div { max-width: 30rem; width: 100%; }
+}
+
+.devise-form {
   border: 1px solid $gray-200;
   padding-top: 2rem;
   text-align: center;
