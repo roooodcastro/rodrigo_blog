@@ -3,6 +3,7 @@ en:
   description: Rodrigo Castro's main website and portfolio
 
   actions: Actions
+  are_you_sure: 'Are you sure?'
   back: Back
   delete: Delete
   edit: Edit
@@ -54,6 +55,12 @@ en:
       show:
         title: Blog Articles
     tags:
+      index:
+        article_count:
+          zero: No articles found with this tag
+          one: "%{count} article found with this tag"
+          other: "%{count} articles found with this tag"
+        title: Blog Tags
       show:
         article_count:
           one: "%{count} article with this tag:"

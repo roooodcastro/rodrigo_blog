@@ -40,7 +40,8 @@ module Blog
 
     def destroy
       @article.destroy
-      redirect_to articles_url, notice: 'Article was successfully destroyed.'
+      redirect_to blog_articles_path,
+                  notice: 'Article was successfully destroyed.'
     end
 
     private

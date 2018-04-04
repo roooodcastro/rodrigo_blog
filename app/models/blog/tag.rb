@@ -10,6 +10,7 @@ module Blog
     validates :name, presence: true, uniqueness: true
 
     scope :ordered_by_name, -> { order :name }
+    scope :with_article_tags, -> { includes :article_tags }
 
     def article_count
       "(x#{article_tags.count})"

@@ -4,7 +4,7 @@ module Blog
     before_action :authorize_action
 
     def index
-      @tags = Blog::Tag.all
+      @tags = Blog::Tag.ordered_by_name.with_article_tags
       respond_to do |format|
         format.html
         format.json { render json: @tags.to_json(methods: [:article_count]) }
@@ -13,6 +13,17 @@ module Blog
 
     def show
       @tag = @tag.decorate(view_context)
+    end
+
+    def edit
+    end
+
+    def update
+    end
+
+    def destroy
+      @tag.destroy
+      redirect_to blog_tags_path, notice: 'Tag was successfully destroyed!'
     end
 
     private
