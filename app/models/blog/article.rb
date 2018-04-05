@@ -34,6 +34,7 @@ module Blog
     private
 
     def create_tags
+      return unless tags_text
       new_article_tags = tags_text.split(',').map(&:strip).uniq.map do |text|
         tag = Blog::Tag.find_or_create_by(name: text)
         Blog::ArticleTag.find_or_create_by(article: self, tag: tag)

@@ -39,7 +39,10 @@ en:
         new: Create new article
         title: All Blog Articles
       manage_sidebar:
+        new: Write New
         title: Manage Article
+      new:
+        title: Compose New Article
       recent_articles:
         title: Recent Articles
       related_articles:

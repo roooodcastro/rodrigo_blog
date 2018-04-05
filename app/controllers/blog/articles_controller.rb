@@ -3,7 +3,7 @@
 module Blog
   class ArticlesController < ::BlogController
     before_action :load_article, only: [:show, :edit, :update, :destroy]
-    before_action :authorize_action, except: [:index, :show]
+    before_action :authorize_action, only: [:edit, :update, :destroy]
 
     def index
       redirect_to blog_feed_path unless current_user&.poster?
@@ -16,12 +16,14 @@ module Blog
 
     def new
       @article = current_user.articles.build
+      authorize(@article, 'new?')
     end
 
     def edit; end
 
     def create
       @article = current_user.articles.build(article_params)
+      authorize(@article, 'create?')
 
       if @article.save
         redirect_to @article, notice: 'Article was successfully created.'

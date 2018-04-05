@@ -4,7 +4,7 @@ module Blog
   class BlogController < ::BlogController
     def show
       @articles = Article.published.order_by_published
-                    .map { |a| a.decorate(view_context) } * 10
+                    .map { |a| a.decorate(view_context) }
     end
   end
 end

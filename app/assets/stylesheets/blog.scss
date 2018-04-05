@@ -66,6 +66,24 @@ ul.blog-sidebar-taglist {
   }
 }
 
+ul.blog-sidebar-article_list {
+  padding-left: 0;
+  list-style: none;
+  li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: $gray-200;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+  }
+  li.blog-sidebar-article_list-header {
+    padding: 0.5rem 0;
+  }
+}
+
 .blog-tag {
   background-color: $gray-200;
   display: inline-block;

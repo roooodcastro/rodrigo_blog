@@ -1,3 +1,12 @@
 <div class="blog-sidebar-item">
   <h3><%= t '.title' %></h3>
+
+  <ul class="blog-sidebar-article_list">
+    <% @blog.recent_articles.each do |month, articles| %>
+      <li class="blog-sidebar-article_list-header"><%= month %></li>
+      <% articles.each do |article| %>
+        <li><%= link_to article.title, article %></li>
+      <% end %>
+    <% end %>
+  </ul>
 </div>
