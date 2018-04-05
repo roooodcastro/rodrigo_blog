@@ -17,3 +17,4 @@
 //= require tui-editor-table
 
 //= require blog/articles/form
+//= require blog/articles/share

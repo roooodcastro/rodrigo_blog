@@ -1,9 +1,11 @@
-<div class="blog-sidebar-item">
-  <h3><%= t '.title' %></h3>
+<% if @blog.related_articles(article).present? %>
+  <div class="blog-sidebar-item">
+    <h3><%= t '.title' %></h3>
 
-  <ul class="blog-sidebar-article_list">
-    <% @blog.related_articles(article).each do |related_article| %>
-      <li><%= link_to related_article.title, related_article %></li>
-    <% end %>
-  </ul>
-</div>
+    <ul class="blog-sidebar-article_list">
+      <% @blog.related_articles(article).each do |related_article| %>
+        <li><%= link_to related_article.title, related_article %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

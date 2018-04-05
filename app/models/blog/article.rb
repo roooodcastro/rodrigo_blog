@@ -24,10 +24,10 @@ module Blog
     scope :order_by_published, -> { order published_at: :desc }
 
     scope :related_to, ->(article) do
-      joins(:article_tags).where.not(id: article.id)
+      joins(:article_tags).where.not(id: article.id).published
         .where(blog_article_tags: { tag_id: article.tags.map(&:id) })
         .group('blog_articles.id').order("count('blog_articles.id') desc")
-        .limit(5)
+        .having("count('blog_articles.id') > 0").limit(5)
     end
 
     def formatted_tags
@@ -41,7 +41,7 @@ module Blog
     private
 
     def create_tags
-      return
+      return unless tags_text
       new_article_tags = tags_text.split(',').map(&:strip).uniq.map do |text|
         tag = Blog::Tag.find_or_create_by(name: text)
         Blog::ArticleTag.find_or_create_by(article: self, tag: tag)

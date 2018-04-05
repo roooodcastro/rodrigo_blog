@@ -61,5 +61,17 @@ module Blog
         yield(f)
       end
     end
+
+    def encoded_url
+      URI.encode view.blog_article_url(object.slug)
+    end
+
+    def encoded_title
+      URI.encode object.title
+    end
+
+    def encoded_summary
+      URI.encode object.summary
+    end
   end
 end
