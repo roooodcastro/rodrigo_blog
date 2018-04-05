@@ -13,5 +13,9 @@
     <a href="https://www.reddit.com/submit?url=<%= article.encoded_url %>">
       <%= icon 'fab', 'reddit-alien' %>
     </a>
+
+    <a href="mailto:?subject=<%= article.encoded_title %>&body=<%= article.encoded_email_body %>">
+      <%= icon 'fas', 'envelope' %>
+    </a>
   </div>
 </div>

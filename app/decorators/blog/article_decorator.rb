@@ -73,5 +73,11 @@ module Blog
     def encoded_summary
       URI.encode object.summary
     end
+
+    def encoded_email_body
+      text = [object.summary, t('blog.articles.article.email_body',
+                                url: view.blog_article_url(object.slug))]
+      URI.encode(text.join("\n\n"))
+    end
   end
 end

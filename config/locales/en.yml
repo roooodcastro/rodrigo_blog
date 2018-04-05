@@ -26,6 +26,7 @@ en:
           Are you sure you want to delete this article? THIS CANNOT BE UNDONE!
         confirm_publish: Are you sure you want to publish this article?
         confirm_unpublish: Are you sure you want to unpublish this article?
+        email_body: "Check out this post at %{url}"
         unpublished: UNPUBLISHED
       articles:
         comments:
