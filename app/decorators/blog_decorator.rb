@@ -10,6 +10,6 @@ class BlogDecorator < BaseDecorator
   end
 
   def related_articles(article)
-
+    Blog::Article.related_to(article).except(article.object)
   end
 end

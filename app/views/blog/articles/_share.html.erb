@@ -1,3 +1,13 @@
 <div class="blog-sidebar-item">
   <h3><%= t '.title' %></h3>
+
+  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+     data-text="<%= article.title %>"
+     data-url="<%= blog_article_url(article.slug) %>"
+     data-via="rodonrails"
+     data-show-count="false">Tweet</a>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+  <script type="IN/Share" data-url="<%= blog_article_url(article.slug) %>"></script>
 </div>
