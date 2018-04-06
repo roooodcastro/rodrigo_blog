@@ -1,10 +1,16 @@
 <div class="pure-menu pure-menu-horizontal">
   <ul class="pure-menu-list">
     <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover header-user-menu">
-      <%= link_to icon('far', 'user', current_user.name),
-                  user_path(current_user),
-                  class: 'pure-menu-link' %>
+      <%= link_to '#', class: 'pure-menu-link' do %>
+        <%= icon('far', 'user') %>
+        <span><%= current_user.first_name %></span>
+      <% end %>
       <ul class="pure-menu-children">
+        <li class="pure-menu-item">
+          <%= link_to icon('fas', 'user', t(:show_account)),
+                      user_path(current_user),
+                      class: 'pure-menu-link' %>
+        </li>
         <li class="pure-menu-item">
           <%= link_to icon('fas', 'cog', t(:edit_account)),
                       edit_user_registration_path,

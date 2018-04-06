@@ -7,25 +7,25 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   color: $gray-900;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 strong { font-weight: 600; }
 hr { border: none; border-bottom: 1px solid $gray-300; }
 
 a {
-  color: $primary;
+  color: darken($secondary, 15%);
   font-weight: 600;
   text-decoration: none;
-  &:hover { text-decoration: underline; }
+  &:hover { color: $secondary; text-decoration: underline; }
 }
 
 @media screen and (min-width: 48em) {
-  html { font-size: 16px; }
+  html { font-size: 14px; }
 }
 
 @media screen and (min-width: 64em) {
-  html { font-size: 18px; }
+  html { font-size: 16px; }
 }
 
 
@@ -44,7 +44,7 @@ h1.page-title {
 }
 
 
-.main-content { padding: 1rem 0; }
+.main-content { padding: 1rem; }
 
 form.form-inline { display: inline-block; }
 
@@ -55,4 +55,9 @@ dl.horizontal-dl {
   dt { font-weight: 600; }
   dt:after { content: ':'; display: inline-block; margin-bottom: 1rem; }
   dd:after { content: '\A'; white-space: pre; }
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, lg)) {
+  padding-left: 0;
+  padding-right: 0;
 }

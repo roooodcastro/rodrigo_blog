@@ -5,7 +5,7 @@
       <h1>
         <%= link_to root_path do %>
           <%= image_tag 'blowing_stuff_logo.svg' %>
-          <%= t(:title) %>
+          <%= content_for?(:brand) ? content_for(:brand) : t(:title) %>
         <% end %>
       </h1>
 

@@ -9,4 +9,8 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   has_many :articles, foreign_key: 'author_id', class_name: 'Blog::Article'
+
+  def first_name
+    name.split.first
+  end
 end

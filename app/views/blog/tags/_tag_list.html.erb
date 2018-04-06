@@ -3,7 +3,7 @@
 
   <ul class="blog-sidebar-taglist">
     <% tags.each do |tag| %>
-      <li><%= link_to tag.name, blog_tag_path(tag.id) %></li>
+      <li><%= link_to tag.name, blog_tag_path(tag.slug) %></li>
     <% end %>
   </ul>
 </div>

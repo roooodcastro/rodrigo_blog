@@ -1,13 +1,16 @@
 <div class="pure-menu pure-menu-horizontal">
   <ul class="pure-menu-list">
     <li class="pure-menu-item">
-      <%= link_to icon('fas', 'sign-in-alt', t(:sign_in)), new_user_session_path,
-                  class: 'pure-menu-link' %>
+      <%= link_to new_user_session_path, class: 'pure-menu-link' do %>
+        <%= icon('fas', 'sign-in-alt') %>
+        <span><%= t(:sign_in) %></span>
+      <% end %>
     </li>
     <li class="pure-menu-item">
-      <%= link_to icon('fas', 'user-plus', t(:sign_up)), new_user_registration_path,
-                  class: 'pure-menu-link' %>
-
+      <%= link_to new_user_registration_path, class: 'pure-menu-link' do %>
+      <%= icon('fas', 'user-plus') %>
+      <span><%= t(:sign_up) %></span>
+      <% end %>
     </li>
   </ul>
 </div>

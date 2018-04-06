@@ -12,6 +12,7 @@ en:
   not_authorized: >
     Sorry, but you do not have the required permission to perform this action!
   publish: Publish
+  show_account: My Profile
   sign_in: Sign In
   sign_out: Sign Out
   sign_up: Sign Up
@@ -49,7 +50,7 @@ en:
       related_articles:
         title: Related Posts
       share:
-        title: Share
+        title: Share this Article
       tags:
         title: Tags
     blog:

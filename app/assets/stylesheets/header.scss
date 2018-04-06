@@ -19,19 +19,16 @@ header.header-dark {
       color: $gray-200;
       display: inline-block;
       line-height: 4.15rem;
-      &:hover {
-        color: white;
-        text-decoration: none;
-      }
+      padding-left: 1rem;
+      &:hover { color: white; text-decoration: none; }
     }
   }
   .header-content {
     display: flex;
     justify-content: space-between;
-    .header-user {
-
-    }
+    .header-user { text-align: right; }
     .header-menu {
+      display: none;
       flex-grow: 1;
       margin-left: 1rem;
       padding: 0 1rem;
@@ -40,27 +37,12 @@ header.header-dark {
   }
 }
 
-header.header-light {
-  border-bottom: 1px solid $primary;
-  h1 {
-    color: $gray-700;
-    font-size: 1.4rem;
-    line-height: 4rem;
-    font-weight: 600;
-    margin: 0;
-    img {
-      height: 2.5rem;
-      margin-right: 1rem;
-      margin-bottom: 0.25rem;
-      vertical-align: middle;
-      width: 2.5rem;
-    }
-  }
-}
-
 .pure-menu-horizontal ul.pure-menu-list {
   display: flex;
-  > li.pure-menu-item { line-height: 4rem; }
+  > li.pure-menu-item {
+    line-height: 4rem;
+    a span { display: none; }
+  }
   .pure-menu-link {
     background-color: darken($primary, 25%);
     color: $gray-200;
@@ -75,9 +57,34 @@ header.header-light {
       transition: background-color 0.3s;
     }
   }
-  li.header-user-menu { min-width: 12rem; }
   .pure-menu-children li.pure-menu-item { line-height: 2.5rem; }
 }
 
 ul.pure-menu-list > li.pure-menu-has-children { position: relative; }
-ul.pure-menu-list ul.pure-menu-children { position: absolute; width: 100%; }
+ul.pure-menu-list ul.pure-menu-children {
+  left: -10rem;
+  position: absolute;
+  right: 0;
+  text-align: left;
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, lg)) {
+  .header-menu { display: block; }
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, lg)) {
+  h1 a { padding-left: 0; }
+
+  li.header-user-menu { min-width: 12rem; }
+
+  .pure-menu-horizontal ul.pure-menu-list > li.pure-menu-item > a span {
+    display: inline;
+  }
+
+  ul.pure-menu-list ul.pure-menu-children {
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: left;
+  }
+}

@@ -3,7 +3,7 @@
 <div>
   <% @tags.each do |tag| %>
     <h2 class="blog-tags-tag_header">
-      <%= link_to tag.name, blog_tag_path(tag.id) %>
+      <%= link_to tag.name, blog_tag_path(tag.slug) %>
       <% if policy(tag).update? %>
         <span class="pure-button-group">
           <%= link_to icon('far', 'edit', t(:edit)), edit_blog_tag_path(tag.id),

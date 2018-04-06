@@ -38,10 +38,9 @@ section.blog-article-content {
 }
 
 section.blog-article-sidebar {
-  margin: 1rem 0 0 2rem;
+  margin: 1rem 0 0 0;
   h3 {
     border-bottom: 1px solid $gray-300;
-    color: darken($secondary, 20%);
     font-weight: 500;
     margin: 2rem 0 1rem 0;
     padding-bottom: 0.5rem;
@@ -89,11 +88,7 @@ ul.blog-sidebar-article_list {
 #blogSidebarShareButtons {
   display: flex;
   justify-content: space-around;
-  a {
-    color: darken($secondary, 20%);
-    font-size: 2.5rem;
-    &:hover { color: $secondary; }
-  }
+  a { font-size: 2rem; }
 }
 
 .blog-tag {
@@ -138,7 +133,7 @@ ul.blog-sidebar-article_list {
     border: 1px solid transparent;
     border-bottom-color: $gray-300;
     margin-bottom: 1rem;
-    padding: 1rem;
+    padding: 1rem 0;
     h2 { margin: 0 0 1.5rem 0; }
     .blog-articles-item-info {
       display: flex;
@@ -190,14 +185,8 @@ ul.blog-sidebar-article_list {
 }
 
 
-@media screen and (max-width: map-get($grid-breakpoints, lg)) {
-  section.blog-article-sidebar {
-    display: none;
-  }
-}
-
 @media screen and (min-width: map-get($grid-breakpoints, lg)) {
   section.blog-article-sidebar {
-
+    margin: 1rem 0 0 2rem;
   }
 }
