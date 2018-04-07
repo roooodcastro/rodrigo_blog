@@ -2,7 +2,8 @@
   <% tags.each do |tag| %>
     <span class="blog-tag">
       <span></span>
-      <%= link_to tag.name, blog_tag_path(tag.slug) %>
+      <%= link_to tag.name, blog_tag_path(tag.slug),
+                  tabindex: allow_tab ? nil : -1 %>
     </span>
   <% end %>
 <% else %>

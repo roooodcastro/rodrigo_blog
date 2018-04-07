@@ -8,3 +8,4 @@
 
 //= require blog/articles/form
 //= require blog/articles/share
+//= require blog/articles/show

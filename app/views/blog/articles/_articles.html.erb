@@ -12,7 +12,7 @@
         </div>
         <div>
           <%= render partial: 'blog/tags/tags',
-                     locals: { tags: article.tags } %>
+                     locals: { tags: article.tags, allow_tab: false } %>
         </div>
       </div>
       <div class="blog-articles-item-actions">

@@ -1,12 +1,12 @@
 article.blog-article {
   font-family: "Open Sans", Helvetica, "Helvetica Neue", Arial, sans-serif;
   h1 {
-    color: $gray-900;
+    color: $text-color;
     font-size: 3rem;
     margin: 1rem 0 2rem 0;
     text-align: center;
     small {
-      color: $gray-700;
+      color: $text-color-faded;
       display: block;
       font-size: 1rem;
       font-weight: 400;
@@ -14,7 +14,7 @@ article.blog-article {
     }
   }
   h2 {
-    border-bottom: 1px solid $gray-300;
+    border-bottom: 1px solid $border-color;
     margin-top: 3rem;
     padding-bottom: 0.5rem;
   }
@@ -25,7 +25,7 @@ article.blog-article {
 }
 
 section.blog-article-content {
-  color: $gray-900;
+  color: $text-color;
   line-height: 1.5rem;
   text-align: justify;
 }
@@ -40,13 +40,13 @@ section.blog-article-content {
 section.blog-article-sidebar {
   margin: 1rem 0 0 0;
   h3 {
-    border-bottom: 1px solid $gray-300;
+    border-bottom: 1px solid $border-color;
     font-weight: 500;
     margin: 2rem 0 1rem 0;
     padding-bottom: 0.5rem;
   }
   .blog-article-manage {
-    background-color: $gray-200;
+    background-color: $background-highlight;
     padding: 1rem;
     h3 { margin-top: 0; }
   }
@@ -60,7 +60,7 @@ ul.blog-sidebar-taglist {
     padding: 0.3rem 1rem;
     transition: all 0.3s;
     &:hover {
-      background-color: $gray-200;
+      background-color: $background-highlight;
       text-decoration: none;
       transition: all 0.3s;
     }
@@ -75,7 +75,7 @@ ul.blog-sidebar-article_list {
     padding: 0.5rem 1rem;
     transition: all 0.3s;
     &:hover {
-      background-color: $gray-200;
+      background-color: $background-highlight;
       text-decoration: none;
       transition: all 0.3s;
     }
@@ -92,16 +92,16 @@ ul.blog-sidebar-article_list {
 }
 
 .blog-tag {
-  background-color: $gray-200;
+  background-color: $background-highlight;
   display: inline-block;
   line-height: 1.3rem;
   margin: 0 0 0.25rem 0.8rem;
   position: relative;
   text-align: left;
   a, em { display: block; padding: 0 1rem 0.1rem 1rem; }
-  a { color: $primary; }
+  a { color: $primary-dark; }
   &:before {
-    border-right: 0.7rem solid $gray-200;
+    border-right: 0.7rem solid $background-highlight;
     border-top: 0.7rem solid transparent;
     border-bottom: 0.7rem solid transparent;
     content: '';
@@ -132,7 +132,7 @@ ul.blog-sidebar-article_list {
   margin-top: 2rem;
   .blog-articles-item {
     border: 1px solid transparent;
-    border-bottom-color: $gray-300;
+    border-bottom-color: $border-color;
     margin-bottom: 1rem;
     padding: 1rem 0;
     h2 { margin: 0 0 1.5rem 0; }
@@ -176,7 +176,7 @@ ul.blog-sidebar-article_list {
 
 .blog-tags-tag_header {
   align-items: center;
-  border-top: 1px solid $gray-300;
+  border-top: 1px solid $border-color;
   display: flex;
   justify-content: space-between;
   padding-top: 1rem;

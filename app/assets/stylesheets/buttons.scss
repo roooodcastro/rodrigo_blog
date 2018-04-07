@@ -25,10 +25,10 @@
 .button-secondary {
   background-color: white;
   border-color: $secondary;
-  color: darken($secondary, 15%);
+  color: $link-color;
   &:hover {
     background-image: linear-gradient(transparent, rgba($secondary, 0.2));
-    color: darken($secondary, 10%);
+    color: $link-color-hover;
   }
 }
 

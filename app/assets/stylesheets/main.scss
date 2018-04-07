@@ -6,7 +6,7 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  color: $gray-900;
+  color: $text-color;
   font-size: 12px;
   height: 100%;
 }
@@ -15,7 +15,7 @@ html {
 body { height: 100%; }
 
 strong { font-weight: 600; }
-hr { border: none; border-bottom: 1px solid $gray-300; }
+hr { border: none; border-bottom: 1px solid $border-color; }
 
 a {
   color: $link-color;
@@ -31,7 +31,7 @@ a {
 
 
 h1, h2, h3, h4, h5, h6 {
-  color: $gray-800;
+  color: $text-color;
   font-family: 'Rubik', "Helvetica Neue", Helvetica, Calibri, "Gill Sans",
   "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", Tahoma,
   Geneva, Arial, sans-serif;
@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1.page-title {
-  border-bottom: 1px solid $gray-300;
+  border-bottom: 1px solid $border-color;
   padding-bottom: 0.5rem;
 }
 

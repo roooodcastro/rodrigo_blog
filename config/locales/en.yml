@@ -28,6 +28,7 @@ en:
         confirm_publish: Are you sure you want to publish this article?
         confirm_unpublish: Are you sure you want to unpublish this article?
         email_body: "Check out this post at %{url}"
+        tags_group: 'Tags for this article:'
         unpublished: UNPUBLISHED
       articles:
         comments:

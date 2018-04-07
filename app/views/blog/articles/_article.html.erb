@@ -7,8 +7,9 @@
         <%= article.published_date %>
       </small>
     </h1>
-    <div class="blog-article-tags">
-      <%= render partial: 'blog/tags/tags', locals: { tags: article.tags } %>
+    <div class="blog-article-tags" role="group" aria-label="<%= t '.tags_group' %>">
+      <%= render partial: 'blog/tags/tags',
+                 locals: { tags: article.tags, allow_tab: true } %>
     </div>
   </header>
 
