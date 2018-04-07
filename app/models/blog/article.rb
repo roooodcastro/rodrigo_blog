@@ -22,6 +22,7 @@ module Blog
     scope :unpublished, -> { where 'published_at is null' }
     scope :order_by_recents, -> { order created_at: :desc }
     scope :order_by_published, -> { order published_at: :desc }
+    scope :with_tags, -> { includes :tags  }
 
     scope :related_to, ->(article) do
       joins(:article_tags).where.not(id: article.id).published

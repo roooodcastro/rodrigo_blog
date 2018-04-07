@@ -44,6 +44,10 @@ $theme-colors: map-merge((
 
 $body-bg:                   $gray-100;
 $body-color:                $gray-800;
+$text-color: $gray-900;
+$link-color: darken($secondary, 20%);
+$link-color-hover: $secondary;
+
 
 // Grid breakpoints
 //

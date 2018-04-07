@@ -8,32 +8,33 @@ html {
   box-sizing: border-box;
   color: $gray-900;
   font-size: 12px;
+  height: 100%;
 }
+
+
+body { height: 100%; }
 
 strong { font-weight: 600; }
 hr { border: none; border-bottom: 1px solid $gray-300; }
 
 a {
-  color: darken($secondary, 15%);
+  color: $link-color;
   font-weight: 600;
   text-decoration: none;
-  &:hover { color: $secondary; text-decoration: underline; }
-}
-
-@media screen and (min-width: 48em) {
-  html { font-size: 14px; }
-}
-
-@media screen and (min-width: 64em) {
-  html { font-size: 16px; }
+  transition: all 0.2s;
+  &:hover {
+    color: $link-color-hover;
+    text-decoration: underline;
+    transition: all 0.2s;
+  }
 }
 
 
 h1, h2, h3, h4, h5, h6 {
   color: $gray-800;
   font-family: 'Rubik', "Helvetica Neue", Helvetica, Calibri, "Gill Sans",
-    "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", Tahoma,
-    Geneva, Arial, sans-serif;
+  "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", Tahoma,
+  Geneva, Arial, sans-serif;
   font-weight: 400;
   a { font-weight: 400; }
 }
@@ -43,11 +44,9 @@ h1.page-title {
   padding-bottom: 0.5rem;
 }
 
-
+.main { min-height: calc(100% - 16rem); }
 .main-content { padding: 1rem; }
-
 form.form-inline { display: inline-block; }
-
 .text-center { text-align: center; }
 
 dl.horizontal-dl {
@@ -57,7 +56,11 @@ dl.horizontal-dl {
   dd:after { content: '\A'; white-space: pre; }
 }
 
+@media screen and (min-width: map-get($grid-breakpoints, md)) {
+  html { font-size: 14px; }
+}
+
 @media screen and (min-width: map-get($grid-breakpoints, lg)) {
-  padding-left: 0;
-  padding-right: 0;
+  html { font-size: 16px; }
+  .main-content { padding-left: 0; padding-right: 0; }
 }

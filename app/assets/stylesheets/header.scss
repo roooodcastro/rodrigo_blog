@@ -1,5 +1,6 @@
 header.header-dark {
   background-color: darken($primary, 25%);
+  height: 4rem;
   h1 {
     color: $gray-200;
     font-size: 1.4rem;
@@ -10,7 +11,7 @@ header.header-dark {
       border: 2px solid $primary;
       border-radius: 50%;
       height: 2.5rem;
-      margin-right: 1rem;
+      margin-right: 0.5rem;
       margin-bottom: 0.25rem;
       vertical-align: middle;
       width: 2.5rem;
@@ -19,7 +20,7 @@ header.header-dark {
       color: $gray-200;
       display: inline-block;
       line-height: 4.15rem;
-      padding-left: 1rem;
+      padding-left: 0.5rem;
       &:hover { color: white; text-decoration: none; }
     }
   }
@@ -28,9 +29,8 @@ header.header-dark {
     justify-content: space-between;
     .header-user { text-align: right; }
     .header-menu {
-      display: none;
       flex-grow: 1;
-      margin-left: 1rem;
+      margin-left: 0.5rem;
       padding: 0 1rem;
       text-align: left;
     }
@@ -49,7 +49,7 @@ header.header-dark {
     font-weight: 400;
     padding: 0 1rem;
     transition: background-color 0.3s;
-    i { margin-right: 0.5rem; }
+    span { margin-left: 0.5rem; }
     &:hover {
       background-color: $primary;
       color: white;
@@ -69,12 +69,8 @@ ul.pure-menu-list ul.pure-menu-children {
 }
 
 @media screen and (min-width: map-get($grid-breakpoints, lg)) {
-  .header-menu { display: block; }
-}
-
-@media screen and (min-width: map-get($grid-breakpoints, lg)) {
   h1 a { padding-left: 0; }
-
+  //header.header-dark .header-content .header-menu { display: block; }
   li.header-user-menu { min-width: 12rem; }
 
   .pure-menu-horizontal ul.pure-menu-list > li.pure-menu-item > a span {

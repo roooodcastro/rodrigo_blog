@@ -20,10 +20,11 @@ Bundler.require(*Rails.groups)
 
 module Rooood
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
     config.default_locale = :en
+
+    config.assets.precompile += %w(editor.js)
 
     # Don't generate system test files.
     config.generators.system_tests = nil

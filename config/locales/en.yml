@@ -76,6 +76,9 @@ en:
       tags:
         no_tag: No Tags
   layouts:
+    footer:
+      contact: Contact
+      member_login: Member Login
     horizontal_menu:
       feed: Public Feed
   users:

@@ -58,11 +58,11 @@ ul.blog-sidebar-taglist {
   li a {
     display: block;
     padding: 0.3rem 1rem;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
     &:hover {
       background-color: $gray-200;
       text-decoration: none;
-      transition: background-color 0.3s;
+      transition: all 0.3s;
     }
   }
 }
@@ -73,11 +73,11 @@ ul.blog-sidebar-article_list {
   li a {
     display: block;
     padding: 0.5rem 1rem;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
     &:hover {
       background-color: $gray-200;
       text-decoration: none;
-      transition: background-color 0.3s;
+      transition: all 0.3s;
     }
   }
   li.blog-sidebar-article_list-header {
@@ -99,6 +99,7 @@ ul.blog-sidebar-article_list {
   position: relative;
   text-align: left;
   a, em { display: block; padding: 0 1rem 0.1rem 1rem; }
+  a { color: $primary; }
   &:before {
     border-right: 0.7rem solid $gray-200;
     border-top: 0.7rem solid transparent;

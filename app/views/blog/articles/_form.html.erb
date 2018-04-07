@@ -1,3 +1,5 @@
+<%= javascript_include_tag 'editor', 'data-turbolinks-track': false %>
+
 <%= form_with(model: article, local: true,
               html: { class: 'pure-form pure-form-stacked blog-article-form' }) do |form| %>
   <% if article.errors.any? %>
@@ -37,7 +39,7 @@
   <div class="actions">
     <%= link_to icon('fas', 'chevron-left', t(:back)), back_path,
                 class: 'pure-button button-secondary' %>
-    <%= form.button icon('far', 'save', t('.save')),
-                    class: 'pure-button button-primary' %>
+    <%= form.button icon('far', 'save', t('.save')), id: 'submitButton',
+                    class: 'pure-button button-primary', disabled: true %>
   </div>
 <% end %>
