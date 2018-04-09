@@ -16,4 +16,9 @@
   <section class="blog-article-content">
     <%= article.render_content %>
   </section>
+
+  <section class="blog-article-comments">
+    <%= render partial: 'blog/comments/comments',
+               locals: { comments: article.comments, root: true } %>
+  </section>
 </article>

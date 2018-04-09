@@ -3,6 +3,7 @@ en:
   description: Rodrigo Castro's main website and portfolio
 
   actions: Actions
+  ago: ago
   are_you_sure: 'Are you sure?'
   back: Back
   delete: Delete
@@ -60,6 +61,9 @@ en:
         no_articles: No articles found!
       show:
         title: Blog Articles
+    comments:
+      comments:
+        title: Comments
     tags:
       index:
         article_count:

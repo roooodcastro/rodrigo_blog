@@ -1,0 +1,12 @@
+<div class="blog-comment-unit">
+  <%= image_tag 'blowing_stuff_logo.svg' %>
+  <div>
+    <h4>
+      <%= comment.user_name %>
+      <small>
+        <%= distance_of_time_in_words_to_now(comment.created_at) %> <%= t :ago %>:
+      </small>
+    </h4>
+    <%= comment.body %>
+  </div>
+</div>

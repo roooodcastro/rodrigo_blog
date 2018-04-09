@@ -1,0 +1,14 @@
+<% if root %>
+  <h2><%= t '.title' %></h2>
+<% end %>
+
+<% comments.each do |comment| %>
+  <div class="blog-comment" id="comment<%= comment.id %>">
+    <%= render partial: 'blog/comments/comment', locals: { comment: comment } %>
+
+    <% if comment.replies.present? %>
+      <%= render partial: 'blog/comments/comments',
+                 locals: { comments: comment.replies, root: false } %>
+    <% end %>
+  </div>
+<% end %>

@@ -185,6 +185,37 @@ ul.blog-sidebar-article_list {
   span { font-size: 1rem; }
 }
 
+.blog-comment {
+  border-left: 1px solid $border-color;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  padding: 1rem 0.5rem;
+  > div {
+    h4 {
+      color: $link-color;
+      font-weight: 500;
+      margin: 0 0 0.5rem 0;
+      small {
+        color: $text-color-faded;
+        &:before { content: '•'; }
+      }
+    }
+  }
+  .blog-comment-unit {
+    align-items: center;
+    display: flex;
+    img {
+      border: 1px solid $border-color;
+      border-radius: 50%;
+      height: 3rem;
+      margin-right: 1rem;
+      width: 3rem;
+    }
+  }
+}
+
+.blog-comment + div { margin-top: 0; }
+
 
 @media screen and (min-width: map-get($grid-breakpoints, lg)) {
   section.blog-article-sidebar {
