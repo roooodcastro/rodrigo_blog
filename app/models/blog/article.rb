@@ -11,6 +11,7 @@ module Blog
     belongs_to :author, class_name: 'User'
     has_many :article_tags
     has_many :tags, through: :article_tags
+    has_many :comments, as: :commentable
 
     after_save :create_tags
 
@@ -22,7 +23,7 @@ module Blog
     scope :unpublished, -> { where 'published_at is null' }
     scope :order_by_recents, -> { order created_at: :desc }
     scope :order_by_published, -> { order published_at: :desc }
-    scope :with_tags, -> { includes :tags  }
+    scope :with_tags, -> { includes :tags }
 
     scope :related_to, ->(article) do
       joins(:article_tags).where.not(id: article.id).published
