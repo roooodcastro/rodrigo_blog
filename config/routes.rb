@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :blog do
     resource :blog, only: [:show], path: '/', as: :feed
     resources :articles
+    resources :comments, only: [:create, :update, :destroy]
     resources :tags
   end
 end

@@ -6,6 +6,7 @@ en:
   ago: ago
   are_you_sure: 'Are you sure?'
   back: Back
+  cancel: Cancel
   delete: Delete
   edit: Edit
   edit_account: Account Settings
@@ -62,8 +63,22 @@ en:
       show:
         title: Blog Articles
     comments:
+      created: Comment submitted!
+      destroyed: Comment deleted!
+
+      comment:
+        author: (author)
+        reply: Reply
       comments:
         title: Comments
+      form:
+        body_placeholder: Write...
+        email_placeholder: Email (optional)
+        name_placeholder: Name (required)
+        posting_as_html: "Commenting as: <strong>%{user}</strong>"
+        reply: Reply
+        submit: Comment
+        title: Join the Discussion
     tags:
       index:
         article_count:

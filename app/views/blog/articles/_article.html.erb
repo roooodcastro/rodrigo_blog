@@ -19,6 +19,7 @@
 
   <section class="blog-article-comments">
     <%= render partial: 'blog/comments/comments',
-               locals: { comments: article.comments, root: true } %>
+               locals: { comments: article.all_comments, root: true,
+                         article: article } %>
   </section>
 </article>

@@ -9,3 +9,5 @@
 //= require blog/articles/form
 //= require blog/articles/share
 //= require blog/articles/show
+//= require blog/comments/reply_form
+//= require blog/comments/index

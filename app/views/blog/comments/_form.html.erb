@@ -1,0 +1,42 @@
+<%= form_with(model: new_comment, local: true,
+              html: { class: 'pure-form pure-form-stacked blog-comment-form',
+                      style: is_reply ? 'display: none' : '',
+                      id: is_reply ? 'comment_reply_form' : '' }) do |form| %>
+  <%= form.hidden_field :commentable_type, id: 'comment_commentable_type' %>
+  <%= form.hidden_field :commentable_id, id: 'comment_commentable_id' %>
+  <% unless is_reply %>
+    <h3><%= t '.title' %></h3>
+  <% end %>
+
+  <% if signed_in? %>
+    <p><%= t '.posting_as_html', user: current_user.name %></p>
+  <% else %>
+    <div class="field">
+      <%= form.text_field :user_name, placeholder: t('.name_placeholder'),
+                          required: true %>
+    </div>
+    <div class="field">
+      <%= form.email_field :user_email, placeholder: t('.email_placeholder') %>
+    </div>
+  <% end %>
+
+  <div class="field field-body">
+    <% if signed_in? %>
+      <%= image_tag 'blowing_stuff_logo.svg',
+                    class: 'blog-comment-profile_image' %>
+    <% end %>
+
+    <%= form.text_area :body, placeholder: t('.body_placeholder'),
+                       required: true, rows: 4, maxlength: 500,
+                       id: 'comment_body' %>
+  </div>
+
+  <div class="actions">
+    <%= form.button icon('far', 'save', is_reply ? t('.reply') : t('.submit')),
+                    class: 'pure-button button-primary' %>
+    <% if is_reply %>
+      <%= link_to t(:cancel), "##{new_comment.commentable_id}",
+                  class: 'pure-button button-secondary blog-comment-cancel' %>
+    <% end %>
+  </div>
+<% end %>

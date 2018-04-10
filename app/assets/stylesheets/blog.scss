@@ -186,36 +186,79 @@ ul.blog-sidebar-article_list {
 }
 
 .blog-comment {
-  border-left: 1px solid $border-color;
-  margin-left: 1rem;
-  margin-top: 0.5rem;
+  border-left: 2px solid lighten($border-color, 10%);
+  margin-top: 1rem;
   padding: 1rem 0.5rem;
-  > div {
+  > .blog-comment-unit {
+    align-items: center;
+    display: flex;
     h4 {
       color: $link-color;
       font-weight: 500;
       margin: 0 0 0.5rem 0;
-      small {
-        color: $text-color-faded;
-        &:before { content: '•'; }
-      }
+      small { color: $text-color-faded; &:before { content: '•'; } }
     }
+    span.from-admin { color: $primary; }
   }
-  .blog-comment-unit {
-    align-items: center;
-    display: flex;
-    img {
-      border: 1px solid $border-color;
-      border-radius: 50%;
-      height: 3rem;
-      margin-right: 1rem;
-      width: 3rem;
-    }
-  }
+  .blog-comment { margin-left: 1rem; padding-right: 0; }
 }
 
-.blog-comment + div { margin-top: 0; }
+.blog-comment + .blog-comment { margin-top: 0; }
+article.blog-article h2.blog-comments-title { margin: 1rem 0 0 0; }
+.blog-comment-content p { margin: 0 0 0.5rem 0; }
 
+.blog-comment .actions {
+  font-size: 0.8rem;
+}
+
+.blog-comments-separator {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  position: relative;
+  span {
+    border: 0.3rem solid $border-color;
+    border-radius: 50%;
+  }
+  &:before, &:after {
+    border: 0.3rem solid $border-color;
+    border-radius: 50%;
+    content: '';
+    left: 40%;
+    position: absolute;
+    top: 0;
+  }
+  &:after { left: auto; right: 40%; }
+}
+
+.blog-comment-profile_image {
+  background-color: white;
+  border: 1px solid $border-color;
+  border-radius: 50%;
+  color: $border-color;
+  font-size: 1.8rem;
+  height: 3rem;
+  line-height: 2.7rem;
+  margin-right: 1rem;
+  text-align: center;
+  width: 3rem;
+}
+
+.blog-comment-form {
+  background-color: $background-highlight;
+  border: 1px solid $border-color;
+  padding: 0 1rem;
+  margin-top: 1rem;
+  .actions {
+    background-color: transparent;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+  .field-body {
+    align-items: center;
+    display: flex;
+  }
+}
 
 @media screen and (min-width: map-get($grid-breakpoints, lg)) {
   section.blog-article-sidebar {

@@ -1,12 +1,36 @@
-<div class="blog-comment-unit">
-  <%= image_tag 'blowing_stuff_logo.svg' %>
-  <div>
+<div class="blog-comment-unit" data-id="<%= comment.id %>">
+  <% if comment.user_email.present? %>
+    <%= image_tag 'blowing_stuff_logo.svg',
+                  class: 'blog-comment-profile_image' %>
+  <% else %>
+    <%= icon 'far', 'user', class: 'blog-comment-profile_image' %>
+  <% end %>
+  <div class="blog-comment-content">
     <h4>
-      <%= comment.user_name %>
+      <span class="<%= 'from-admin' if comment.user&.admin? %>">
+        <%= comment.user_name %> <%= t('.author') if comment.user&.admin? %>
+      </span>
       <small>
-        <%= distance_of_time_in_words_to_now(comment.created_at) %> <%= t :ago %>:
+        <%= link_to "#comment#{comment.id}" do %>
+          <%= distance_of_time_in_words_to_now(comment.created_at) %> <%= t :ago %>:
+        <% end %>
       </small>
     </h4>
-    <%= comment.body %>
+    <%= simple_format comment.body %>
+    <div class="actions">
+      <%= link_to t('.reply'), '#', data: { id: comment.id },
+                  class: 'blog-comment-reply_button' %>
+      <% if policy(comment).update? %>
+        •
+        <%= link_to t(:edit), '#', data: { id: comment.id },
+                    class: 'blog-comment-edit_button' %>
+      <% end %>
+
+      <% if policy(comment).destroy? %>
+        •
+        <%= link_to t(:delete), blog_comment_path(comment.id), method: :delete,
+                    data: { confirm: t(:are_you_sure) } %>
+      <% end %>
+    </div>
   </div>
 </div>

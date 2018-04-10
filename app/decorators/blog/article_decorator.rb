@@ -79,5 +79,9 @@ module Blog
                                 url: view.blog_article_url(object.slug))]
       URI.encode(text.join("\n\n"))
     end
+
+    def all_comments
+      @comments ||= object.comments.order_by_recents.with_second_level_replies
+    end
   end
 end

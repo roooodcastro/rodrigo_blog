@@ -20,14 +20,21 @@
 
       <div class="pure-u-1 pure-u-lg-1-3">
         <h4><%= t('.member_login') %></h4>
-        <p>
-          <%= link_to icon('fas', 'sign-in-alt', t(:sign_in)),
-                      new_user_session_path %>
-        </p>
-        <p>
-          <%= link_to icon('fas', 'user-plus', t(:sign_up)),
-                      new_user_registration_path %>
-        </p>
+        <% if signed_in? %>
+          <p>
+            <%= link_to icon('fas', 'sign-out-alt', t(:sign_out)),
+                        destroy_user_session_path, method: :delete %>
+          </p>
+        <% else %>
+          <p>
+            <%= link_to icon('fas', 'sign-in-alt', t(:sign_in)),
+                        new_user_session_path %>
+          </p>
+          <p>
+            <%= link_to icon('fas', 'user-plus', t(:sign_up)),
+                        new_user_registration_path %>
+          </p>
+        <% end %>
       </div>
     </div>
   </div>

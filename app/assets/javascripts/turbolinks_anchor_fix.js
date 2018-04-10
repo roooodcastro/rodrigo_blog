@@ -23,6 +23,9 @@ $(document).on('turbolinks:click', function(event) {
 $(document).on('turbolinks:load', function(event) {
     if (window.location.hash) {
         const $element = $(`a[name="${window.location.hash.substring(1)}"]`);
+        if ($element.offset() == null) {
+            return false;
+        }
         return $('html, body').scrollTop($element.offset().top);
     }
 });
