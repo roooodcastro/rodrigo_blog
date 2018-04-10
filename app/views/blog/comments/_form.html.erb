@@ -11,7 +11,7 @@
   <% if signed_in? %>
     <p><%= t '.posting_as_html', user: current_user.name %></p>
   <% else %>
-    <div class="field">
+    <div class="field field-name">
       <%= form.text_field :user_name, placeholder: t('.name_placeholder'),
                           required: true %>
     </div>

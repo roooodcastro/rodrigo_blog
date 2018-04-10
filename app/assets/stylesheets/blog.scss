@@ -203,13 +203,18 @@ ul.blog-sidebar-article_list {
   .blog-comment { margin-left: 1rem; padding-right: 0; }
 }
 
+
+// Makes sure the top margin is only for the first comment/reply
 .blog-comment + .blog-comment { margin-top: 0; }
+
+// Adjusts the margin for the "Join the Discussion" title
 article.blog-article h2.blog-comments-title { margin: 1rem 0 0 0; }
+
+// Adds some space between the body and the "reply" etc links
 .blog-comment-content p { margin: 0 0 0.5rem 0; }
 
-.blog-comment .actions {
-  font-size: 0.8rem;
-}
+// Makes the "reply", "edit", and "delete" links smaller
+.blog-comment .blog-comment-actions { font-size: 0.8rem; }
 
 .blog-comments-separator {
   display: flex;
@@ -254,14 +259,10 @@ article.blog-article h2.blog-comments-title { margin: 1rem 0 0 0; }
     margin-bottom: 1rem;
     padding: 0;
   }
-  .field-body {
-    align-items: center;
-    display: flex;
-  }
+  .field-body { align-items: center; display: flex; }
+  .field-name { margin-top: 1rem; }
 }
 
 @media screen and (min-width: map-get($grid-breakpoints, lg)) {
-  section.blog-article-sidebar {
-    margin: 1rem 0 0 2rem;
-  }
+  section.blog-article-sidebar { margin: 1rem 0 0 2rem; }
 }

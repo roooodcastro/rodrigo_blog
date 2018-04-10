@@ -17,7 +17,7 @@
       </small>
     </h4>
     <%= simple_format comment.body %>
-    <div class="actions">
+    <div class="blog-comment-actions">
       <%= link_to t('.reply'), '#', data: { id: comment.id },
                   class: 'blog-comment-reply_button' %>
       <% if policy(comment).update? %>
