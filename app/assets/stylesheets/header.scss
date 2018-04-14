@@ -59,6 +59,7 @@ header.header-dark {
     }
   }
   .pure-menu-children li.pure-menu-item { line-height: 2.5rem; }
+  .pure-menu-children { z-index: 20; }
 }
 
 ul.pure-menu-list > li.pure-menu-has-children { position: relative; }

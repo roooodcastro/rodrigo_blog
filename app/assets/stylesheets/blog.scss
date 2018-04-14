@@ -263,6 +263,6 @@ article.blog-article h2.blog-comments-title { margin: 1rem 0 0 0; }
   .field-name { margin-top: 1rem; }
 }
 
-@media screen and (min-width: map-get($grid-breakpoints, lg)) {
+@media screen and (min-width: map-get($grid-breakpoints, md)) {
   section.blog-article-sidebar { margin: 1rem 0 0 2rem; }
 }
