@@ -2,19 +2,23 @@
   <h3><%= t '.title' %></h3>
 
   <div id="blogSidebarShareButtons">
-    <a href="https://twitter.com/intent/tweet?text=<%= article.encoded_title %>&url=<%= article.encoded_url %>">
+    <a href="https://twitter.com/intent/tweet?text=<%= article.encoded_title %>&url=<%= article.encoded_url %>"
+       aria-label="<%= t('.aria-twitter') %>">
       <%= icon 'fab', 'twitter' %>
     </a>
 
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url=<%= article.encoded_url %>&title=<%= article.encoded_title %>&summary=<%= article.encoded_summary %>">
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=<%= article.encoded_url %>&title=<%= article.encoded_title %>&summary=<%= article.encoded_summary %>"
+       aria-label="<%= t('.aria-linkedin') %>">
       <%= icon 'fab', 'linkedin-in' %>
     </a>
 
-    <a href="https://www.reddit.com/submit?url=<%= article.encoded_url %>">
+    <a href="https://www.reddit.com/submit?url=<%= article.encoded_url %>"
+       aria-label="<%= t('.aria-reddit') %>">
       <%= icon 'fab', 'reddit-alien' %>
     </a>
 
-    <a href="mailto:?subject=<%= article.encoded_title %>&body=<%= article.encoded_email_body %>">
+    <a href="mailto:?subject=<%= article.encoded_title %>&body=<%= article.encoded_email_body %>"
+       aria-label="<%= t('.aria-email') %>">
       <%= icon 'fas', 'envelope' %>
     </a>
   </div>

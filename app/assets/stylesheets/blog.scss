@@ -198,7 +198,7 @@ ul.blog-sidebar-article_list {
       margin: 0 0 0.5rem 0;
       small { color: $text-color-faded; &:before { content: '•'; } }
     }
-    span.from-admin { color: $primary; }
+    span.from-admin { color: $primary-dark; }
   }
   .blog-comment { margin-left: 1rem; padding-right: 0; }
 }

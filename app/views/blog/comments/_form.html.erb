@@ -22,13 +22,14 @@
 
   <div class="field field-body">
     <% if signed_in? %>
-      <%= image_tag 'blowing_stuff_logo.svg',
-                    class: 'blog-comment-profile_image' %>
+      <%= image_tag gravatar_url_for(current_user.email),
+                    class: 'blog-comment-profile_image',
+                    alt: t('.profile_alt', user: current_user.name) %>
     <% end %>
 
     <%= form.text_area :body, placeholder: t('.body_placeholder'),
                        required: true, rows: 4, maxlength: 500,
-                       id: 'comment_body' %>
+                       id: 'comment_body', aria: { label: t('.aria_body') } %>
   </div>
 
   <div class="actions">

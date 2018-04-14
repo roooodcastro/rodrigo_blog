@@ -1,6 +1,7 @@
 <div class="blog-comment-unit" data-id="<%= comment.id %>">
   <%= image_tag gravatar_url_for(comment.user_email),
-                class: 'blog-comment-profile_image' %>
+                class: 'blog-comment-profile_image',
+                alt: t('.profile_alt', user: comment.user_name) %>
   <div class="blog-comment-content">
     <h4>
       <span class="<%= 'from-admin' if comment.user&.admin? %>">

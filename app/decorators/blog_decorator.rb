@@ -1,6 +1,6 @@
 class BlogDecorator < BaseDecorator
   def all_tags
-    @all_tags ||= Blog::Tag.ordered_by_name
+    @all_tags ||= Blog::Tag.ordered_by_usage.limit(10)
   end
 
   def recent_articles

@@ -53,6 +53,10 @@ en:
       related_articles:
         title: Related Posts
       share:
+        aria-email: Share via E-mail
+        aria-linkedin: Share on LinkedIn
+        aria-reddit: Share on Reddit
+        aria-twitter: Share on Twitter
         title: Share this Article
       tags:
         title: Tags
@@ -68,14 +72,17 @@ en:
 
       comment:
         author: (author)
+        profile_alt: "Profile picture for %{user}"
         reply: Reply
       comments:
         title: Comments
       form:
+        aria_body: Write your message
         body_placeholder: Write...
         email_placeholder: Email (optional)
         name_placeholder: Name (required)
         posting_as_html: "Commenting as: <strong>%{user}</strong>"
+        profile_alt: "Profile picture for %{user}"
         reply: Reply
         submit: Comment
         title: Join the Discussion
@@ -92,13 +99,16 @@ en:
           other: "%{count} articles with this tag:"
         title_html: "Tag \"%{tag}\""
       tag_list:
-        title: All Tags
+        all_tags: 'View all tags'
+        title: Popular Tags
       tags:
         no_tag: No Tags
   layouts:
     footer:
       contact: Contact
       member_login: Member Login
+    header_user_menu:
+      aria_user: User Menu
     horizontal_menu:
       feed: Public Feed
   users:

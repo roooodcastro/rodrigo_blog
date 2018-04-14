@@ -51,7 +51,7 @@
         </div>
       <% end %>
 
-      <% if !current_user&.admin? %>
+      <% if policy(resource).destroy? %>
         <div class="devise-form">
           <h2 class="mt-0"><%= t('.cancel_my_account') %></h2>
 

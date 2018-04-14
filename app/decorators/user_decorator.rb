@@ -19,10 +19,18 @@ class UserDecorator < BaseDecorator
   end
 
   def delete_button(block = false)
+    return disabled_delete_button(block) unless policy(object).destroy?
     class_block = block ? 'pure-button-block mt-3' : ''
     link_to icon('far', 'trash-alt', t(:delete)),
             view.user_path(object), method: :delete,
             class: "pure-button #{class_block} button-danger",
             data: { confirm: t('users.confirm_delete') }
+  end
+
+  def disabled_delete_button(block = false)
+    class_block = block ? 'pure-button-block mt-3' : ''
+    link_to icon('far', 'trash-alt', t(:delete)),
+            '#', class: "pure-button #{class_block} button-danger",
+            disabled: true
   end
 end

@@ -6,11 +6,11 @@
           <%= link_to Blog::Article.model_name.human.pluralize,
                       blog_articles_path, class: 'pure-menu-link' %>
         </li>
+        <li class="pure-menu-item">
+          <%= link_to User.model_name.human.pluralize,
+                      users_path, class: 'pure-menu-link' %>
+        </li>
       <% end %>
-      <li class="pure-menu-item">
-        <%= link_to Blog::Tag.model_name.human.pluralize, blog_tags_path,
-                    class: 'pure-menu-link' %>
-      </li>
     </ul>
   </div>
 </div>
