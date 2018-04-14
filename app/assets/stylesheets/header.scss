@@ -1,6 +1,5 @@
 header.header-dark {
   background-color: $primary-dark;
-  height: 4rem;
   h1 {
     color: $gray-200;
     font-size: 1.4rem;
@@ -19,7 +18,7 @@ header.header-dark {
     a {
       color: $gray-200;
       display: inline-block;
-      line-height: 4.15rem;
+      line-height: 4rem;
       padding-left: 0.5rem;
       &:hover { color: white; text-decoration: none; }
     }
@@ -36,6 +35,8 @@ header.header-dark {
     }
   }
 }
+
+.pure-menu-has-children > .pure-menu-link:after { font-size: inherit; }
 
 .pure-menu-horizontal ul.pure-menu-list {
   display: flex;

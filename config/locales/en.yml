@@ -115,6 +115,11 @@ en:
       title: Users
     show:
       basic_info: Basic Info
+      confirm_delete: >
+        I am sorry to see you go, but are you sure? Unlike what happens in some
+        social networks out there, this action will be permanent and cannot
+        be undone!
+      delete_account: DELETE MY ACCOUNT
       post_count:
         one: "(%{count} post)"
         other: "(%{count} posts)"

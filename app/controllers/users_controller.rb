@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     else
       flash[:error] = t('users.destroy.error', errors)
     end
-    redirect_to @user
+    redirect_to root_path
   end
 
   private

@@ -7,15 +7,26 @@
   <dd><%= @user.name %></dd>
   <dt><%= User.human_attribute_name :email %></dt>
   <dd><%= @user.email %></dd>
-  <dt><%= User.human_attribute_name :admin %></dt>
-  <dd><%= @user.formatted_admin? %></dd>
-  <dt><%= User.human_attribute_name :poster %></dt>
-  <dd><%= @user.formatted_poster? %></dd>
+  <% if current_user.admin? %>
+    <dt><%= User.human_attribute_name :admin %></dt>
+    <dd><%= @user.formatted_admin? %></dd>
+    <dt><%= User.human_attribute_name :poster %></dt>
+    <dd><%= @user.formatted_poster? %></dd>
+  <% end %>
 </dl>
 
-<hr />
+<% if policy(@user.object).destroy? %>
+  <%= link_to icon('far', 'trash-alt', t('.delete_account')),
+              user_path(@user.object.id), method: :delete,
+              data: { confirm: t('.confirm_delete') },
+              class: 'pure-button button-danger' %>
+<% end %>
 
-<h2><%= t('.posts') %> <%= t('.post_count', count: @user.articles.size) %></h2>
+<% if current_user.admin? %>
+  <hr />
 
-<%= render partial: 'blog/articles/articles',
-           locals: { articles: @user.articles } %>
+  <h2><%= t('.posts') %> <%= t('.post_count', count: @user.articles.size) %></h2>
+
+  <%= render partial: 'blog/articles/articles',
+             locals: { articles: @user.articles } %>
+<% end %>
