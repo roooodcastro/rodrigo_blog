@@ -22,12 +22,18 @@ article.blog-article {
     margin-bottom: 3rem;
     text-align: center;
   }
+  blockquote {
+    border-left: 0.25rem solid $border-color;
+    color: $text-color-faded;
+    margin: 0;
+    padding: 0.5rem 2rem;
+    p { margin: 0; }
+  }
 }
 
 section.blog-article-content {
   color: $text-color;
   line-height: 1.5rem;
-  text-align: justify;
 }
 
 .blog-article-form {
@@ -264,5 +270,5 @@ article.blog-article h2.blog-comments-title { margin: 1rem 0 0 0; }
 }
 
 @media screen and (min-width: map-get($grid-breakpoints, md)) {
-  section.blog-article-sidebar { margin: 1rem 0 0 2rem; }
+  section.blog-article-sidebar { margin: 0 0 0 2rem; }
 }
