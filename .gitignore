@@ -28,3 +28,8 @@ spec/examples.txt/public/packs
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
