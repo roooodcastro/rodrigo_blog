@@ -1,7 +1,7 @@
 article.blog-article {
   font-family: "Open Sans", Helvetica, "Helvetica Neue", Arial, sans-serif;
+  h2, h3 { color: $header-color; }
   h1 {
-    color: $text-color;
     font-size: 3rem;
     margin: 1rem 0 2rem 0;
     text-align: center;
@@ -15,9 +15,10 @@ article.blog-article {
   }
   h2 {
     border-bottom: 1px solid $border-color;
-    margin-top: 3rem;
+    margin-top: 4rem;
     padding-bottom: 0.5rem;
   }
+  h3 { margin: 3rem 0 1rem 0; }
   .blog-article-tags {
     margin-bottom: 3rem;
     text-align: center;
@@ -28,6 +29,12 @@ article.blog-article {
     margin: 0;
     padding: 0.5rem 2rem;
     p { margin: 0; }
+  }
+  code {
+    background-color: hsla(0, 100%, 50%, 0.05);
+    color: #D14;
+    font-family: "Source Code Pro", Monaco, monospace;
+    padding: 0.1rem 0.3rem;
   }
 }
 
