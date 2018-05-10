@@ -12,6 +12,7 @@ html {
 }
 
 body {
+  background-attachment: fixed;
   background-color: $gray-200;
   background-image: image-url('bg.svg');
   background-position-y: 64px;
