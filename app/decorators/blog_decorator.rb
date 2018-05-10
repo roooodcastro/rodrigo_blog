@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BlogDecorator < BaseDecorator
   def all_tags
     @all_tags ||= Tag.ordered_by_usage.limit(5)
@@ -11,6 +13,6 @@ class BlogDecorator < BaseDecorator
   end
 
   def related_articles(article)
-    @related ||= Article.related_to(article).except(article.object)
+    @related_articles ||= Article.related_to(article).except(article.object)
   end
 end

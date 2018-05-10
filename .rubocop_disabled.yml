@@ -166,3 +166,6 @@ Style/FormatStringToken:
 
 Metrics/BlockLength:
   Enabled: false
+
+Lint/SafeNavigationConsistency:
+  Enabled: false

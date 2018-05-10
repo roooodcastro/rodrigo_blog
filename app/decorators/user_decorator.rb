@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UserDecorator < BaseDecorator
   def articles
     @articles ||= object.articles.order_by_recents.map { |a| a.decorate(view) }

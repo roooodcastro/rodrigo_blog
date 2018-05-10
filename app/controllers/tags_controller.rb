@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TagsController < BaseBlogController
   before_action :load_tag, only: [:show, :edit, :update, :destroy]
   before_action :authorize_action
@@ -15,11 +17,9 @@ class TagsController < BaseBlogController
     @tag = @tag.decorate(view_context)
   end
 
-  def edit
-  end
+  def edit; end
 
-  def update
-  end
+  def update; end
 
   def destroy
     @tag.destroy

@@ -80,6 +80,6 @@ class ArticleDecorator < BaseDecorator
   end
 
   def all_comments
-    @comments ||= object.comments.order_by_recents.with_second_level_replies
+    @all_comments ||= object.comments.order_by_recents.with_second_level_replies
   end
 end

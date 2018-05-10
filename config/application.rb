@@ -24,7 +24,7 @@ module Rooood
 
     config.default_locale = :en
 
-    config.assets.precompile += %w(editor.js)
+    config.assets.precompile += %w[editor.js]
 
     # Don't generate system test files.
     config.generators.system_tests = nil

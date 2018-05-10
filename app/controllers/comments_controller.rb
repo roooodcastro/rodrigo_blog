@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < BaseBlogController
   before_action :load_comment, only: [:update, :destroy]
   before_action :authorize_action
@@ -9,9 +11,7 @@ class CommentsController < BaseBlogController
     redirect_back fallback_location: @comment.article || articles_path
   end
 
-  def update
-
-  end
+  def update; end
 
   def destroy
     @comment.destroy
