@@ -6,8 +6,8 @@
 //= require js-routes
 //= require jquery-flexdatalist
 
-//= require blog/articles/form
-//= require blog/articles/share
-//= require blog/articles/show
-//= require blog/comments/reply_form
-//= require blog/comments/index
+//= require articles/form
+//= require articles/share
+//= require articles/show
+//= require comments/reply_form
+//= require comments/index

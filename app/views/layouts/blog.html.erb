@@ -6,9 +6,9 @@
     <div class="pure-u-1 pure-u-md-1-3">
       <section class="blog-article-sidebar">
         <%= content_for(:sidebar) %>
-        <%= render partial: 'blog/tags/tag_list',
+        <%= render partial: 'tags/tag_list',
                    locals: { tags: @blog.all_tags } %>
-        <%= render partial: 'blog/articles/recent_articles' %>
+        <%= render partial: 'articles/recent_articles' %>
       </section>
     </div>
   </div>

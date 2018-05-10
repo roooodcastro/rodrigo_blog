@@ -1,0 +1,5 @@
+<%= title t('.title_html', tag: @tag.name) %>
+
+<h2><%= t('.article_count', count: @tag.articles.size) %></h2>
+
+<%= render partial: 'blog/articles', locals: { articles: @tag.articles } %>

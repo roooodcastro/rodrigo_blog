@@ -1,0 +1,21 @@
+<div class="blog-articles">
+  <% if articles.present? %>
+    <% articles.each do |article| %>
+      <div class="blog-articles-item">
+        <h2><%= link_to article.title, article_path(article.slug) %></h2>
+        <div class="blog-articles-item-summary">
+          <%= simple_format article.summary.presence || t('.no_summary') %>
+        </div>
+        <div class="blog-articles-item-info">
+          <%= article.published_date %>
+          <div>
+            <%= render partial: 'tags/tags',
+                       locals: { tags: article.tags, allow_tab: false } %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <%= t('.no_articles') %>
+  <% end %>
+</div>

@@ -1,11 +1,8 @@
-class BlogController < ApplicationController
-  layout 'blog'
+# frozen_string_literal: true
 
-  before_action :load_blog_decorator
-
-  private
-
-  def load_blog_decorator
-    @blog = BlogDecorator.new(view_context)
+class BlogController < BaseBlogController
+  def show
+    @articles = Article.published.order_by_published.with_tags
+                  .map { |a| a.decorate(view_context) }
   end
 end

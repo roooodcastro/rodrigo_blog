@@ -1,0 +1,10 @@
+<% if policy(article).update? %>
+  <div class="blog-article-manage">
+    <h3><%= t '.title' %></h3>
+    <%= link_to icon('far', 'file', t('.new')), new_article_path,
+                class: 'pure-button button-success pure-button-block mb-3' %>
+    <%= article.edit_button(true) %>
+    <%= article.delete_button(true) %>
+    <%= article.publish_button(true) %>
+  </div>
+<% end %>

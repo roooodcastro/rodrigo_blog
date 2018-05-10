@@ -27,6 +27,6 @@
 
   <h2><%= t('.posts') %> <%= t('.post_count', count: @user.articles.size) %></h2>
 
-  <%= render partial: 'blog/articles/articles',
+  <%= render partial: 'articles/articles',
              locals: { articles: @user.articles } %>
 <% end %>

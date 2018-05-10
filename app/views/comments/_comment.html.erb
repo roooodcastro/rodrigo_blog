@@ -1,0 +1,33 @@
+<div class="blog-comment-unit" data-id="<%= comment.id %>">
+  <%= image_tag gravatar_url_for(comment.user_email),
+                class: 'blog-comment-profile_image',
+                alt: t('.profile_alt', user: comment.user_name) %>
+  <div class="blog-comment-content">
+    <h4>
+      <span class="<%= 'from-admin' if comment.user&.admin? %>">
+        <%= comment.user_name %> <%= t('.author') if comment.user&.admin? %>
+      </span>
+      <small>
+        <%= link_to "#comment#{comment.id}" do %>
+          <%= distance_of_time_in_words_to_now(comment.created_at) %> <%= t :ago %>:
+        <% end %>
+      </small>
+    </h4>
+    <%= simple_format comment.body %>
+    <div class="blog-comment-actions">
+      <%= link_to t('.reply'), '#', data: { id: comment.id },
+                  class: 'blog-comment-reply_button' %>
+      <% if policy(comment).update? %>
+        •
+        <%= link_to t(:edit), '#', data: { id: comment.id },
+                    class: 'blog-comment-edit_button' %>
+      <% end %>
+
+      <% if policy(comment).destroy? %>
+        •
+        <%= link_to t(:delete), comment_path(comment.id), method: :delete,
+                    data: { confirm: t(:are_you_sure) } %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<%= content_for(:title, @article.title) %>
+
+<%= render partial: 'articles/article', locals: { article: @article } %>
+
+<%= content_for(:sidebar) do %>
+  <%= render partial: 'articles/manage_sidebar',
+             locals: { article: @article } %>
+  <%= render partial: 'articles/share',
+             locals: { article: @article } %>
+  <%= render partial: 'articles/related_articles',
+             locals: { article: @article } %>
+<% end %>

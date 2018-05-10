@@ -3,8 +3,8 @@
     <ul class="pure-menu-list">
       <% if current_user&.admin? %>
         <li class="pure-menu-item">
-          <%= link_to Blog::Article.model_name.human.pluralize,
-                      blog_articles_path, class: 'pure-menu-link' %>
+          <%= link_to Article.model_name.human.pluralize,
+                      articles_path, class: 'pure-menu-link' %>
         </li>
         <li class="pure-menu-item">
           <%= link_to User.model_name.human.pluralize,

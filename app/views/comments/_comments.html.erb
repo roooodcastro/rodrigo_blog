@@ -1,0 +1,24 @@
+<% if root %>
+  <div class="blog-comments-separator"><span></span></div>
+
+  <h2 class="blog-comments-title"><%= t '.title' %></h2>
+
+  <%= render partial: 'comments/form',
+             locals: { new_comment: article.comments.build, is_reply: false } %>
+
+  <%= render partial: 'comments/form',
+             locals: { new_comment: Comment.new, is_reply: true } %>
+<% end %>
+
+<div>
+  <% comments.select(&:persisted?).each do |comment| %>
+    <div class="blog-comment" id="comment<%= comment.id %>">
+      <%= render partial: 'comments/comment', locals: { comment: comment } %>
+
+      <% if comment.replies.present? %>
+        <%= render partial: 'comments/comments',
+                   locals: { comments: comment.replies, root: false } %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+<div class="blog-sidebar-item">
+  <h3><%= t '.title' %></h3>
+
+  <ul class="blog-sidebar-taglist">
+    <% tags.each do |tag| %>
+      <li><%= link_to tag.name, tag_path(tag.slug) %></li>
+    <% end %>
+    <br />
+    <li><%= link_to t('.all_tags'), tags_path %></li>
+  </ul>
+
+</div>

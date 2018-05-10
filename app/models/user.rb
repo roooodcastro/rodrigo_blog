@@ -8,8 +8,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
-  has_many :articles, foreign_key: 'author_id', class_name: 'Blog::Article'
-  has_many :comments, class_name: 'Blog::Comment'
+  has_many :articles, foreign_key: 'author_id'
+  has_many :comments
 
   def first_name
     name.split.first
