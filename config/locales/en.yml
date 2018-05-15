@@ -64,7 +64,7 @@ en:
       no_summary: No summary available
       no_articles: No articles found!
     show:
-      title: Blog Articles
+      title: Articles
   comments:
     created: Comment submitted!
     destroyed: Comment deleted!
