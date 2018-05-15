@@ -1,6 +1,8 @@
 en:
   title: Rodrigo Castro
-  description: Rodrigo Castro's main website and portfolio
+  description: >
+    Personal blog with articles and tips about programming, Ruby on Rails, and
+    other technology related projects
 
   actions: Actions
   ago: ago
