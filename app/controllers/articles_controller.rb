@@ -2,7 +2,7 @@
 
 class ArticlesController < BaseBlogController
   before_action :load_article, only: [:show, :edit, :update, :destroy]
-  before_action :authorize_action, only: [:edit, :update, :destroy]
+  before_action :authorize_action
 
   def index
     redirect_to feed_path unless current_user&.poster?

@@ -36,7 +36,7 @@ class Article < ApplicationRecord
   end
 
   def published?
-    published_at?
+    published_at.present?
   end
 
   private
