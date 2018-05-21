@@ -1,4 +1,5 @@
 en:
+  blog_title: Rodrigo Castro Blog
   title: Rodrigo Castro
   description: >
     Personal blog with articles and tips about programming, Ruby on Rails, and
@@ -139,3 +140,19 @@ en:
     update:
       success: User updated successfully!
       error: "User couldn't be updated: %{errors}"
+
+  mailer:
+    automatic_send_disclaimer: >
+      This email was sent automatically. Please do not reply to this email, as
+      the address "no-reply@rooood.com" will not receive any emails.
+    comments:
+      hello: "Hello, %{user}!"
+      author_subject: "%{user} commented on your post \"%{article_title}\""
+      commenter_subject: >
+        %{user} replied to your comment on the post "%{article_title}"
+      author_body_html: >
+        The user <strong>%{user}</strong> commented on your post %{post}.
+        Check it out:
+      commenter_body_html: >
+        The user <strong>%{user}</strong> replied to your comment on the post
+        %{post}. Check it out:

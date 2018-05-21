@@ -5,6 +5,8 @@ class Comment < ApplicationRecord
   belongs_to :commentable, polymorphic: true
   belongs_to :article, foreign_key: 'commentable_id',
              foreign_type: 'Article', required: false
+  belongs_to :parent, foreign_key: 'commentable_id',
+             foreign_type: 'Comment', required: false, class_name: 'Comment'
 
   has_many :replies, as: :commentable, class_name: 'Comment',
            dependent: :destroy
@@ -16,6 +18,10 @@ class Comment < ApplicationRecord
 
   scope :order_by_recents, -> { order created_at: :desc }
   scope :with_second_level_replies, -> { includes replies: :replies }
+
+  def original_article
+    article || parent.original_article
+  end
 
   private
 

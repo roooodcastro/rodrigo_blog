@@ -7,8 +7,9 @@ class CommentsController < BaseBlogController
   def create
     @comment = current_user.comments.create(comment_params) if signed_in?
     @comment ||= Comment.create(comment_params)
+    send_emails
     flash[:notice] = t('comments.created')
-    redirect_back fallback_location: @comment.article || articles_path
+    redirect_back fallback_location: @comment.original_article || articles_path
   end
 
   def update; end
@@ -20,6 +21,12 @@ class CommentsController < BaseBlogController
   end
 
   private
+
+  def send_emails
+    CommentsMailer.notify_author(@comment).deliver_later
+    return unless @comment.parent && @comment.parent.user_email.present?
+    CommentsMailer.notify_commenter(@comment).deliver_later
+  end
 
   def comment_params
     params.require(:comment).permit(:body, :user_name, :user_email,

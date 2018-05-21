@@ -1,0 +1,10 @@
+<h1><%= t('mailer.comments.hello', user: @author.name) %></h1>
+
+<p>
+  <%= t('mailer.comments.author_body_html', user: @comment.user_name,
+        post: link_to(@article.title, article_url(@article))) %>
+</p>
+
+<blockquote>
+  <%= simple_format @comment.body %>
+</blockquote>

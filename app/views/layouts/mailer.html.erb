@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
-      /* Email styles need to be inline */
-    </style>
-  </head>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+    body {
+      color: #1F282E;
+      font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+    }
 
-  <body>
-    <%= yield %>
-  </body>
+    h1 { color: #005A96; }
+
+    blockquote {
+      background-color: #e0e7eb;
+      border-left: 1em solid #5c788a;
+      margin: 1.5em 0;
+      padding: 2em 10px;
+      quotes: "“" "”" "‘" "’";
+    }
+
+    blockquote:before {
+      content: open-quote;
+      color: #5c788a;
+      font-size: 4em;
+      margin-right: 0.25em;
+      line-height: 0.1em;
+      vertical-align: -0.4em;
+    }
+    blockquote p { display: inline; }
+
+    footer {
+      color: #5c788a;
+      text-align: center;
+    }
+
+    footer a { color: #5c788a; }
+  </style>
+</head>
+
+<body>
+<%= yield %>
+<hr />
+<footer>
+  <p><%= link_to t(:blog_title), root_url %></p>
+  <p><%= t 'mailer.automatic_send_disclaimer' %></p>
+
+</footer>
+</body>
 </html>
