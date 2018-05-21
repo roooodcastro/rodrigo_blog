@@ -57,6 +57,6 @@ class ArticlesController < BaseBlogController
   end
 
   def authorize_action
-    authorize(@article, "#{params[:action]}?")
+    authorize(@article || Article, "#{params[:action]}?")
   end
 end
