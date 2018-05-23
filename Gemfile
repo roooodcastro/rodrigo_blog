@@ -8,7 +8,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'coderay'
 gem 'devise'
 gem 'devise-i18n'
-gem 'faker'
 gem 'fast_jsonapi'
 gem 'font-awesome-sass', '~> 5.0.9'
 gem 'friendly_id', '~> 5.1'
@@ -36,7 +35,8 @@ source 'https://rails-assets.org' do
 end
 
 group :development, :test do
-  gem 'factory_bot_rails'
+  gem 'factory_bot_rails', require: false
+  gem 'faker', require: false
   gem 'pry'
   gem 'rubocop'
   gem 'sandi_meter', require: false,
@@ -56,7 +56,6 @@ end
 group :test do
   gem 'capybara', require: false
   gem 'database_cleaner'
-  gem 'poltergeist'
   gem 'rails-controller-testing'
   gem 'rspec-collection_matchers'
   gem 'rspec-html-matchers'
