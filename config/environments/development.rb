@@ -23,9 +23,10 @@ Rails.application.configure do
     }
   else
     config.action_controller.perform_caching = false
-
     config.cache_store = :null_store
   end
+
+  config.action_dispatch.tld_length = 0
 
   # Store uploaded files on the local file system
   # (see config/storage.yml for options)

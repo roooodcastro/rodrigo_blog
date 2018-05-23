@@ -24,87 +24,88 @@ en:
   unpublish: Unpublish
   y: 'Yes'
 
-  articles:
-    article:
-      by: by
-      confirm_delete: >
-        Are you sure you want to delete this article? THIS CANNOT BE UNDONE!
-      confirm_publish: Are you sure you want to publish this article?
-      confirm_unpublish: Are you sure you want to unpublish this article?
-      email_body: "Check out this post at %{url}"
-      tags_group: 'Tags for this article:'
-      unpublished: UNPUBLISHED
-    articles:
-      comments:
-        one: "%{count} comment"
-        other: "%{count} comments"
-      unpublished: UNPUBLISHED!
-    form:
-      save: Save Article
-      tags_placeholder: Tags separated by a comma (,)
-    index:
-      new: Create new article
-      title: All Blog Articles
-    manage_sidebar:
-      new: Write New
-      title: Manage Article
-    new:
-      title: Compose New Article
-    recent_articles:
-      title: Recent Articles
-    related_articles:
-      title: Related Posts
-    share:
-      aria-email: Share via E-mail
-      aria-linkedin: Share on LinkedIn
-      aria-reddit: Share on Reddit
-      aria-twitter: Share on Twitter
-      title: Share this Article
-    tags:
-      title: Tags
   blog:
     articles:
+      article:
+        by: by
+        confirm_delete: >
+          Are you sure you want to delete this article? THIS CANNOT BE UNDONE!
+        confirm_publish: Are you sure you want to publish this article?
+        confirm_unpublish: Are you sure you want to unpublish this article?
+        email_body: "Check out this post at %{url}"
+        tags_group: 'Tags for this article:'
+        unpublished: UNPUBLISHED
+      articles:
+        comments:
+          one: "%{count} comment"
+          other: "%{count} comments"
+        unpublished: UNPUBLISHED!
+      form:
+        save: Save Article
+        tags_placeholder: Tags separated by a comma (,)
+      index:
+        new: Create new article
+        title: All Blog Articles
+      manage_sidebar:
+        new: Write New
+        title: Manage Article
+      new:
+        title: Compose New Article
+      recent_articles:
+        title: Recent Articles
+      related_articles:
+        title: Related Posts
+      share:
+        aria-email: Share via E-mail
+        aria-linkedin: Share on LinkedIn
+        aria-reddit: Share on Reddit
+        aria-twitter: Share on Twitter
+        title: Share this Article
+      tags:
+        title: Tags
+
       no_summary: No summary available
       no_articles: No articles found!
-    show:
-      title: Articles
-  comments:
-    created: Comment submitted!
-    destroyed: Comment deleted!
-
-    comment:
-      author: (author)
-      profile_alt: "Profile picture for %{user}"
-      reply: Reply
+    home:
+      show:
+        title: Articles
     comments:
-      title: Comments
-    form:
-      aria_body: Write your message
-      body_placeholder: Write...
-      email_placeholder: Email (optional)
-      name_placeholder: Name (required)
-      posting_as_html: "Commenting as: <strong>%{user}</strong>"
-      profile_alt: "Profile picture for %{user}"
-      reply: Reply
-      submit: Comment
-      title: Join the Discussion
-  tags:
-    index:
-      article_count:
-        zero: No articles found with this tag
-        one: "%{count} article found with this tag"
-        other: "%{count} articles found with this tag"
-      title: Blog Tags
-    show:
-      article_count:
-        one: "%{count} article with this tag:"
-        other: "%{count} articles with this tag:"
-      title_html: "Tag \"%{tag}\""
-    tag_list:
-      all_tags: 'View all tags'
-      title: Popular Tags
+      created: Comment submitted!
+      destroyed: Comment deleted!
+
+      comment:
+        author: (author)
+        profile_alt: "Profile picture for %{user}"
+        reply: Reply
+      comments:
+        title: Comments
+      form:
+        aria_body: Write your message
+        body_placeholder: Write...
+        email_placeholder: Email (optional)
+        name_placeholder: Name (required)
+        posting_as_html: "Commenting as: <strong>%{user}</strong>"
+        profile_alt: "Profile picture for %{user}"
+        reply: Reply
+        submit: Comment
+        title: Join the Discussion
     tags:
-      no_tag: No Tags
+      index:
+        article_count:
+          zero: No articles found with this tag
+          one: "%{count} article found with this tag"
+          other: "%{count} articles found with this tag"
+        title: Blog Tags
+      show:
+        article_count:
+          one: "%{count} article with this tag:"
+          other: "%{count} articles with this tag:"
+        title_html: "Tag \"%{tag}\""
+      tag_list:
+        all_tags: 'View all tags'
+        title: Popular Tags
+      tags:
+        no_tag: No Tags
   layouts:
     footer:
       contact: Contact

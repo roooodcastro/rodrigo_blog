@@ -3,7 +3,7 @@
 class CommentsMailer < ApplicationMailer
   def notify_author(comment)
     @comment = comment
-    @article = comment.original_article
+    @article = comment.parent_article
     @author = @article.author
     mail(to: 'rod.c.azevedo@gmail.com',
          subject: notify_author_subject(@comment, @article))
@@ -11,7 +11,7 @@ class CommentsMailer < ApplicationMailer
 
   def notify_commenter(comment)
     @comment = comment
-    @article = comment.original_article
+    @article = comment.parent_article
     @parent = comment.parent
     mail(to: @parent.user_email,
          subject: notify_commenter_subject(@parent, @article))

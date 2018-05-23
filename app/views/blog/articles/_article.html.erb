@@ -1,0 +1,25 @@
+<article class="blog-article">
+  <header>
+    <h1>
+      <%= article.title %>
+      <small>
+        <%= t '.by' %> <%= article.link_to_author %>,
+        <%= article.published_date %>
+      </small>
+    </h1>
+    <div class="blog-article-tags" role="group" aria-label="<%= t '.tags_group' %>">
+      <%= render partial: 'blog/tags/tags',
+                 locals: { tags: article.tags, allow_tab: true } %>
+    </div>
+  </header>
+
+  <section class="blog-article-content">
+    <%= article.render_content %>
+  </section>
+
+  <section class="blog-article-comments">
+    <%= render partial: 'blog/comments/comments',
+               locals: { comments: article.all_comments, root: true,
+                         article: article } %>
+  </section>
+</article>

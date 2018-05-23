@@ -14,7 +14,7 @@ $(document).on('turbolinks:load', function () {
             });
 
             $('#article_tags').flexdatalist({
-                data: Routes.tags_path({format: 'json'}),
+                data: Routes.blog_tags_path({format: 'json'}),
                 multiple: true,
                 searchIn: 'name',
                 visibleProperties: ['name', 'article_count']

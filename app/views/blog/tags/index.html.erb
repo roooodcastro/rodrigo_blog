@@ -1,0 +1,21 @@
+<%= title t '.title' %>
+
+<div>
+  <% @tags.each do |tag| %>
+    <h2 class="blog-tags-tag_header">
+      <%= link_to tag.name, blog_tag_path(tag.slug) %>
+      <% if policy(tag).update? %>
+        <span class="pure-button-group">
+          <%= link_to icon('far', 'edit', t(:edit)), edit_blog_tag_path(tag.id),
+                      class: 'pure-button button-success' %>
+          <%= link_to icon('far', 'trash-alt', t(:delete)), blog_tag_path(tag.id),
+                      method: :delete, class: 'pure-button button-danger',
+                      data: { confirm: t(:are_you_sure) } %>
+        </span>
+      <% end %>
+    </h2>
+    <p class="mb-4">
+      <em><%= t('.article_count', count: tag.article_tags.size) %></em>
+    </p>
+  <% end %>
+</div>

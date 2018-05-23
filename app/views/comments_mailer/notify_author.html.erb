@@ -2,7 +2,7 @@
 
 <p>
   <%= t('mailer.comments.author_body_html', user: @comment.user_name,
-        post: link_to(@article.title, article_url(@article))) %>
+        post: link_to(@article.title, blog_article_url(@article))) %>
 </p>
 
 <blockquote>
